@@ -97,10 +97,10 @@ public class BaseTest {
     protected void verifyCount(Response response, Object id, int count, String message) {
         int countById = ResponseHelper.getCountResponsesById(response, id);
 
-        if (count > 1) {
+        if (countById > count) {
             Assert.fail("There are many Pets with the same ID = " + id + ". Message: " + message);
         }
-        Assert.assertNotEquals(countById, count, message);
+        Assert.assertEquals(countById, count, message);
     }
 
 }

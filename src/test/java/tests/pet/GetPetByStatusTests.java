@@ -36,6 +36,6 @@ public class GetPetByStatusTests extends BaseTest {
         Response response = petApi.getByStatus(petStatus);
         verifyStatusCode(response, 200, "Get pets by status "+ petStatus);
 
-        verifyCount(response, ResponseHelper.getId(createResponse), 0, "Find pet by Status = " + petStatus);
+        verifyCount(response, ResponseHelper.getId(createResponse), 1, "Find pet by Status = " + petStatus);
     }
 }
