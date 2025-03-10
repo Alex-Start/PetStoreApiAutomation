@@ -1,0 +1,58 @@
+
+Purpose: prepare test scenarios to test API of petstore.swagger.io side.
+Test approach: Test Scenarios - positive/negative cases, Selenium scenarios.
+Tools: Java 17 (because current project should be migrated to Java 17 and nice to have it now)
+       TestNG - easy to manage suite scenarios, run it in order, parallel, using test data, etc. (Familiar to me :) )
+       Rest Assured API framework (+json).
+       Intellij IDEA.
+       log4j - log to console and file.
+       git.
+ Deadline: 3-5 days
+ Risks: match deadline to cover all combination scenarios and selenium.
+
+ Scope scenarios:
+ pet:
+  - uploadImage +
+  - create pet +
+  - update pet +
+  - findByStatus +
+  - findById +
+  - update in store +
+  - delete pet +
+  - find by tag - deprecated - skip now
+ store:
+  - inventory
+  - new order +
+  - find by orderId +
+  - delete by OrderId +
+ user:
+  - create with list +
+  - get by name +
+  - update user
+  - delete user +
+  - login +
+  - logout +
+  - createWithArray - similar to previous one: List
+  - create user +
+
+Example end to end scenario (my vision - need to discuss with business):
+create pet
+update pet
+upload image
+new user
+login
+findByStatus
+new order
+update in store - pending
+update in store - sold
+find by orderId
+logout
+
+Automation Requirements/Notes:
+- Each case is in separate class to have clear vision what type of scenario is fail (to discuss). Some of them contains data_provider just to show how it possible to use.
+- Each case should be independent to each others.
+- Check only Status Code to success/fail - TODO add messages/headers verification
+- add positive (the first) and negative cases - TODO
+- WA to fix an issue to have response (see PetVerifier class) - send request a few time to get correct response (need to discuss the issue)
+- cover Rest API as low automation level to find and fix all possible issues early. Then next is GUI (via Selenium).
+- TestListener to show log for start/end case.
