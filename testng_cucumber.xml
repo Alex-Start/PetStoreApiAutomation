@@ -1,0 +1,11 @@
+<suite name="Cucumber Suite">
+    <listeners>
+        <listener class-name="listener.TestListener" />
+    </listeners>
+
+    <test name="Pet Tests">
+        <classes>
+            <class name="runner.RunCucumberTestPet"/>
+        </classes>
+    </test>
+</suite>

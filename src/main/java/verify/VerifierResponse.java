@@ -45,6 +45,12 @@ public class VerifierResponse {
         Util.waitUntilFuncTrue(func, TIMEOUT_MILLISEC_WAIT_RESPONSE);
         Configurator.setRootLevel(Level.INFO);
 
+        // call once to log action
+        try {
+            response.set(actualResponse.call());
+        } catch (Exception e) {
+            //
+        }
         return verify(expected, response.get());
     }
 

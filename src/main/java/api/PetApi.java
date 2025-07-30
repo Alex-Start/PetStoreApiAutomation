@@ -1,12 +1,8 @@
 package api;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
-import io.restassured.config.HttpClientConfig;
-import io.restassured.config.RestAssuredConfig;
 import io.restassured.http.ContentType;
-import io.restassured.http.Header;
 import io.restassured.response.Response;
-import io.restassured.specification.RequestSpecification;
 import model.Pet;
 import model.PetStatus;
 import org.apache.logging.log4j.LogManager;
@@ -51,7 +47,9 @@ public class PetApi extends BaseApi {
                 .then()
                 .extract().response();
 
-        CleanUpManager.addPetId(ResponseHelper.getId(response));
+        Object id = ResponseHelper.getId(response);
+        logger.info("ID = {}", id);
+        CleanUpManager.addPetId(id);
 
         return response;
     }

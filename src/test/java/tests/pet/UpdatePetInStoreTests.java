@@ -11,7 +11,6 @@ import model.PetStatus;
 import model.Tag;
 import org.testng.annotations.Test;
 
-import java.util.Arrays;
 import java.util.List;
 
 public class UpdatePetInStoreTests extends BaseTest {
@@ -19,12 +18,11 @@ public class UpdatePetInStoreTests extends BaseTest {
 
     @Test
     public void testUpdatePetInStore() throws JsonProcessingException {
-        List<String> photos = List.of("https://example.com/photo1.jpg");
         Pet pet = new Pet.Builder()
                 .setCategory(Category.createCategoryDogs())
                 .setName("Buddy")
-                .setPhotoUrls(photos)
-                .setTags(Arrays.asList(new Tag(1, "Nice"), new Tag(2, "Black")))
+                .setPhotoUrls(List.of("https://example.com/photo1.jpg"))
+                .setTags(List.of(new Tag(1, "Nice"), new Tag(2, "Black")))
                 .setStatus(PetStatus.AVAILABLE)
                 .build();
 

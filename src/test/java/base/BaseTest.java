@@ -10,7 +10,7 @@ import org.testng.Assert;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.Listeners;
 import utils.CleanUpManager;
-import utils.TestListener;
+import listener.TestListener;
 import verify.AssertErrorContainer;
 import verify.VerifierResponse;
 
