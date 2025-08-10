@@ -14,14 +14,14 @@ Feature: Check pets
     And verify that not found deleted pet
     Examples:
       |category|name|photos|tags|status|
-      |dogs    |Buddy|https://side.com/photo1.jpg, https://side.com/photo1.jpg|1, "Nice"|SOLD|
-      |cats    |1|https://side.com/photo1.jpg, https://side.com/photo1.jpg|1, "Nice"/2, "Black"|AVAILABLE|
+      |dogs    |Buddy |https://side.com/photo1.jpg, https://side.com/photo1.jpg|1, "Nice"           |SOLD|
+      |cats    |1     |https://side.com/photo1.jpg, https://side.com/photo1.jpg|1, "Nice"/2, "Black"|AVAILABLE|
       |rabbits |Mr. dj|https://side.com/photo1.jpg, https://side.com/photo1.jpg|1, "Nice"/2, "Black"|NULL|
-      |lions   |NULL|https://side.com/photo1.jpg|1, "Nice"/2, "Black"|SOLD|
-      |lions   |Buddy|https://side.com/photo1.jpg|NULL|AVAILABLE|
-      |lions   |Buddy|NULL|1, "Nice"/2, "Black"|PENDING|
-      |NULL    |1|NULL|1, "Nice"|NULL|
-      |lions   |e|https://side.com/photo1.jpg, https://side.com/photo1.jpg|NULL|NULL|
+      |lions   |NULL  |https://side.com/photo1.jpg                             |1, "Nice"/2, "Black"|SOLD|
+      |lions   |Buddy |https://side.com/photo1.jpg                             |NULL                |AVAILABLE|
+      |lions   |Buddy |NULL                                                    |1, "Nice"/2, "Black"|PENDING|
+      |NULL    |1     |NULL                                                    |1, "Nice"           |NULL|
+      |lions   |e     |https://side.com/photo1.jpg, https://side.com/photo1.jpg|NULL                |NULL|
 
   Scenario: Get pet by status
     When create pet with params category='dogs', name='Buddy', photos='https://example.com/photo1.jpg', tags='1, "Nice"/2, "Black"', status='AVAILABLE'
