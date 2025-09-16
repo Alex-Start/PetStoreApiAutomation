@@ -32,7 +32,7 @@ public class CreateDeleteOrderTests extends BaseTest {
         verifyStatusCode(petResponse, 200, "Create pet");
 
         Order order = new Order.Builder()
-                .setPedId((long)ResponseHelper.getId(petResponse))
+                .setPedId(ResponseHelper.getIdLong(petResponse))
                 .setQuantity(2)
                 .setShipDate()
                 .setStatus("new")

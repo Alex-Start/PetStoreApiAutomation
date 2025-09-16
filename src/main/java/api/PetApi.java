@@ -29,7 +29,7 @@ public class PetApi extends BaseApi {
     private static final Logger logger = LogManager.getLogger(PetApi.class);
 
     private PetApi() {
-        baseURI = Constants.BASE_URL_HTTPS;
+
     }
 
     public static PetApi getPetApi() {

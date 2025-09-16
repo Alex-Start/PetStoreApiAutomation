@@ -22,7 +22,7 @@ public class StoreApi extends BaseApi {
     private static final Logger logger = LogManager.getLogger(StoreApi.class);
 
     private StoreApi() {
-        baseURI = Constants.BASE_URL_HTTPS;
+
     }
 
     public static StoreApi getStoreApi() {

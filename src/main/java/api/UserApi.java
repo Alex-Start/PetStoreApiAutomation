@@ -29,7 +29,7 @@ public class UserApi extends BaseApi {
     private static final Logger logger = LogManager.getLogger(UserApi.class);
 
     private UserApi() {
-        baseURI = Constants.BASE_URL_HTTPS;
+
     }
 
     public static UserApi getUserApi() {

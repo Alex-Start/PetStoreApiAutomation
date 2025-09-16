@@ -54,7 +54,7 @@ public class CleanUpManager {
     }
 
     public static List<Object> getOrders() {
-        return listOrders;
+        return new ArrayList<>(listOrders);
     }
 
     public static void cleanOrders() {

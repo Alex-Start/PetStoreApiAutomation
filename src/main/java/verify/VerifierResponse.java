@@ -28,7 +28,7 @@ public class VerifierResponse {
     //java.lang.AssertionError: FAILED: Status Code = 200 for Pet response
     //Expected :200
     //Actual   :404
-    public static AssertErrorContainer verify(IModel expected, Callable<Response> actualResponse) {
+    public static AssertErrorsContainer verify(IModel expected, Callable<Response> actualResponse) {
 
         AtomicReference<Response> response = new AtomicReference<>();
         Callable<Boolean> func = ()->{
@@ -40,12 +40,13 @@ public class VerifierResponse {
             }
             return true;
         };
+        // Disable logging for loop execution.
         // Set the root logger level to WARN (ignores INFO and DEBUG)
         Configurator.setRootLevel(Level.WARN);
         Util.waitUntilFuncTrue(func, TIMEOUT_MILLISEC_WAIT_RESPONSE);
         Configurator.setRootLevel(Level.INFO);
 
-        // call once to log action
+        // call once to log action - there is only get action
         try {
             response.set(actualResponse.call());
         } catch (Exception e) {
@@ -54,7 +55,7 @@ public class VerifierResponse {
         return verify(expected, response.get());
     }
 
-    public static AssertErrorContainer verify(IModel expected, Response actualResponse) {
+    public static AssertErrorsContainer verify(IModel expected, Response actualResponse) {
         if (expected instanceof Pet) {
             return verifyPet((Pet) expected, actualResponse);
         } else if (expected instanceof User) {
@@ -70,11 +71,11 @@ public class VerifierResponse {
         }
     }
 
-    public static AssertErrorContainer verifyPet(Pet expected, Response actualResponse) {
+    public static AssertErrorsContainer verifyPet(Pet expected, Response actualResponse) {
         expected.updateId(ResponseHelper.getId(actualResponse));
         logInfoMessage("=== Verify Pet: {} ===", expected);
         logInfoMessage("Actual Result: {}", ResponseHelper.getBodyJsonString(actualResponse));
-        verifyStatusCode(actualResponse);
+        AssertErrorsContainer assertErrorsContainer = new AssertErrorsContainer().add(verifyStatusCode(actualResponse));
 
         List<String> errors = new ArrayList<>();
 
@@ -135,16 +136,16 @@ public class VerifierResponse {
 
         // If errors exist, fail with all mismatches
         if (!errors.isEmpty()) {
-            return new AssertErrorContainer(actualResponse).failed("Pet verification failed:\n" + String.join("\n", errors));
+            return assertErrorsContainer.add(new AssertErrorContainer(actualResponse).failed("Pet verification failed:\n" + String.join("\n", errors)));
         }
-        return new AssertErrorContainer(actualResponse).passed();
+        return assertErrorsContainer.add(new AssertErrorContainer(actualResponse).passed());
     }
 
-    public static AssertErrorContainer verifyUser(User expected, Response actualResponse) {
+    public static AssertErrorsContainer verifyUser(User expected, Response actualResponse) {
         expected.updateId(ResponseHelper.getId(actualResponse));
         logInfoMessage("=== Verify User: {} ===", expected);
         logInfoMessage("Actual Result: {}", ResponseHelper.getBodyJsonString(actualResponse));
-        verifyStatusCode(actualResponse);
+        AssertErrorsContainer assertErrorsContainer = new AssertErrorsContainer().add(verifyStatusCode(actualResponse));
 
         List<String> errors = new ArrayList<>();
 
@@ -173,16 +174,16 @@ public class VerifierResponse {
 
         // If errors exist, fail with all mismatches
         if (!errors.isEmpty()) {
-            return new AssertErrorContainer(actualResponse).failed("User verification failed:\n" + String.join("\n", errors));
+            return assertErrorsContainer.add(new AssertErrorContainer(actualResponse).failed("User verification failed:\n" + String.join("\n", errors)));
         }
-        return new AssertErrorContainer(actualResponse).passed();
+        return assertErrorsContainer.add(new AssertErrorContainer(actualResponse).passed());
     }
 
-    private static AssertErrorContainer verifyOrder(Order expected, Response actualResponse) {
+    private static AssertErrorsContainer verifyOrder(Order expected, Response actualResponse) {
         expected.updateId(ResponseHelper.getId(actualResponse));
         logInfoMessage("=== Verify Order: {} ===", expected);
         logInfoMessage("Actual Result: {}", ResponseHelper.getBodyJsonString(actualResponse));
-        verifyStatusCode(actualResponse);
+        AssertErrorsContainer assertErrorsContainer = new AssertErrorsContainer().add(verifyStatusCode(actualResponse));
 
         List<String> errors = new ArrayList<>();
 
@@ -212,16 +213,16 @@ public class VerifierResponse {
 
         // If errors exist, fail with all mismatches
         if (!errors.isEmpty()) {
-            return new AssertErrorContainer(actualResponse).failed("User verification failed:\n" + String.join("\n", errors));
+            return assertErrorsContainer.add(new AssertErrorContainer(actualResponse).failed("User verification failed:\n" + String.join("\n", errors)));
         }
-        return new AssertErrorContainer(actualResponse).passed();
+        return assertErrorsContainer.add(new AssertErrorContainer(actualResponse).passed());
     }
 
-    public static AssertErrorContainer verifyCommonResponse(CommonResponse expected, Response actualResponse) {
+    public static AssertErrorsContainer verifyCommonResponse(CommonResponse expected, Response actualResponse) {
 
         logInfoMessage("=== Verify Response: {} ===", expected);
         logInfoMessage("Actual Result: {}", ResponseHelper.getBodyJsonString(actualResponse));
-        verifyStatusCode(actualResponse);
+        AssertErrorsContainer assertErrorsContainer = new AssertErrorsContainer().add(verifyStatusCode(actualResponse));
 
         List<String> errors = new ArrayList<>();
 
@@ -237,16 +238,16 @@ public class VerifierResponse {
 
         // If errors exist, fail with all mismatches
         if (!errors.isEmpty()) {
-            return new AssertErrorContainer(actualResponse).failed("CommonResponse verification failed:\n" + String.join("\n", errors));
+            return assertErrorsContainer.add(new AssertErrorContainer(actualResponse).failed("CommonResponse verification failed:\n" + String.join("\n", errors)));
         }
-        return new AssertErrorContainer(actualResponse).passed();
+        return assertErrorsContainer.add(new AssertErrorContainer(actualResponse).passed());
     }
 
-    public static AssertErrorContainer verifyCommonResponse(CommonResponseComparator expected, Response actualResponse) {
+    public static AssertErrorsContainer verifyCommonResponse(CommonResponseComparator expected, Response actualResponse) {
 
         logInfoMessage("=== Verify Response: {} ===", expected);
         logInfoMessage("Actual Result: {}", ResponseHelper.getBodyJsonString(actualResponse));
-        verifyStatusCode(actualResponse);
+        AssertErrorsContainer assertErrorsContainer = new AssertErrorsContainer().add(verifyStatusCode(actualResponse));
 
         List<String> errors = new ArrayList<>();
 
@@ -262,9 +263,9 @@ public class VerifierResponse {
 
         // If errors exist, fail with all mismatches
         if (!errors.isEmpty()) {
-            return new AssertErrorContainer(actualResponse).failed("CommonResponse verification failed:\n" + String.join("\n", errors));
+            return assertErrorsContainer.add(new AssertErrorContainer(actualResponse).failed("CommonResponse verification failed:\n" + String.join("\n", errors)));
         }
-        return new AssertErrorContainer(actualResponse).passed();
+        return assertErrorsContainer.add(new AssertErrorContainer(actualResponse).passed());
     }
 
     private static void verify(String msg, IVerifier verifier, Object actual, List<String> errors) {
@@ -320,8 +321,8 @@ public class VerifierResponse {
         logInfoMessage("PASSED: {}: expected={}, actual={}", msg, expected, actual);
     }
 
-    public static void verifyStatusCode(Response response) {
-        verifyStatusCode(response, 200, "Status Code = 200 for Pet response");
+    public static AssertErrorContainer verifyStatusCode(Response response) {
+        return verifyStatusCode(response, 200, "Status Code = 200 for response");
     }
 
     public static AssertErrorContainer verifyStatusCode(Callable<Response> response, int expectedCode, String message) {
