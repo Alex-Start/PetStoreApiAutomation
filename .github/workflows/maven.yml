@@ -13,11 +13,14 @@ on:
     branches: [ "master" ]
   pull_request:
     branches: [ "master" ]
+  issues:
+    types:
+      - opened
 
 jobs:
   build:
 
-    runs-on: ubuntu-latest
+    runs-on: windows-latest
 
     steps:
     - uses: actions/checkout@v4
