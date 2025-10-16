@@ -40,7 +40,7 @@ public class CreateWIthListUserTests extends BaseTest {
         verifyStatusCode(createResponse, 200, "Create users: "+ userList);
 
         for(User user : userList) {
-            verify(user, () -> userApi.getByUsername(user.getUsername()));
+            verify(() -> userApi.getByUsername(user.getUsername()), user);
         }
     }
 }

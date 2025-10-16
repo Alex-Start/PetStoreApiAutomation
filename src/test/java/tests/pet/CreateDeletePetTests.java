@@ -130,7 +130,7 @@ public class CreateDeletePetTests extends BaseTest {
         //Response getResponse = petApi.getById(petId);
         //PetVerifier.verifyPet(pet, getResponse);
         // Call response repeatedly:
-        verify(pet, () -> petApi.getById(petId));
+        verify(() -> petApi.getById(petId), pet);
 
         verifyStatusCode(() -> petApi.delete(petId), 200, "Delete pet");
 

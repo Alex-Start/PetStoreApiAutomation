@@ -29,11 +29,11 @@ public class UpdatePetInStoreTests extends BaseTest {
         Response createResponse = petApi.create(pet);
         verifyStatusCode(createResponse, 200, "Create pet");
 
-        verify(pet, () -> petApi.getById(ResponseHelper.getId(createResponse)));
+        verify(() -> petApi.getById(ResponseHelper.getId(createResponse)), pet);
 
         Response updateResponse = petApi.updateInStore(ResponseHelper.getId(createResponse), pet, "new name", PetStatus.SOLD);
         verifyStatusCode(updateResponse, 200, "Update pet");
 
-        verify(pet, () -> petApi.getById(ResponseHelper.getId(createResponse)));
+        verify(() -> petApi.getById(ResponseHelper.getId(createResponse)), pet);
     }
 }

@@ -77,7 +77,7 @@ public class BaseTest {
                 +":\nError Message: "+ ResponseHelper.getMessage(errorManager.getResponse()));
     }
 
-    protected void verify(IModel expected, Response actualResponse) {
+    protected void verify(Response actualResponse, IModel expected) {
         AssertErrorsContainer errorManager = VerifierResponse.verify(expected, actualResponse);
         if (errorManager.isPassed()) {
             return;
@@ -86,7 +86,7 @@ public class BaseTest {
         Assert.fail(errorManager.getErrorMessage());
     }
 
-    protected void verify(IModel expected, Callable<Response> actualResponse) {
+    protected void verify(Callable<Response> actualResponse, IModel expected) {
         AssertErrorsContainer errorManager = VerifierResponse.verify(expected, actualResponse);
         if (errorManager.isPassed()) {
             return;

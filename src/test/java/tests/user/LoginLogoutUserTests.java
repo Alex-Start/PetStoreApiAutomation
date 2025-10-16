@@ -31,13 +31,13 @@ public class LoginLogoutUserTests extends BaseTest {
         verifyStatusCode(createResponse, 200, "Create user: "+ user.getUsername());
 
         Response loginResponse = userApi.login(user.getUsername(), user.getPassword());
-        verify(new CommonResponseComparator(asNumber(200)
+        verify(loginResponse, new CommonResponseComparator(asNumber(200)
                 , asString("unknown")
-                , asRegexp("logged in user session:\\d*")), loginResponse);
+                , asRegexp("logged in user session:\\d*")));
 
         Response logoutResponse = userApi.logout();
-        verify(new CommonResponseComparator(asNumber(200)
+        verify(logoutResponse, new CommonResponseComparator(asNumber(200)
                 , asString("unknown")
-                , asString("ok")), logoutResponse);
+                , asString("ok")));
     }
 }

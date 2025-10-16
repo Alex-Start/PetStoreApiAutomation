@@ -42,7 +42,7 @@ public class CreateDeleteOrderTests extends BaseTest {
         Response createResponse = storeApi.create(order);
         verifyStatusCode(createResponse, 200, "Create order");
 
-        verify(order, () -> storeApi.getById(ResponseHelper.getId(createResponse)));
+        verify(() -> storeApi.getById(ResponseHelper.getId(createResponse)), order);
 
         verifyStatusCode(() -> storeApi.delete(ResponseHelper.getId(createResponse)), 200, "Delete order");
 
