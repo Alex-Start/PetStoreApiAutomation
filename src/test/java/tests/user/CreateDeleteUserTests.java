@@ -25,7 +25,7 @@ public class CreateDeleteUserTests extends BaseTest {
         Response createResponse = userApi.create(user);
         verifyStatusCode(createResponse, 200, "Create user");
 
-        verify(user, () -> userApi.getByUsername(user.getUsername()));
+        verify(() -> userApi.getByUsername(user.getUsername()), user);
 
         verifyStatusCode(() -> userApi.delete(user.getUsername()), 200, "Delete user");
 

@@ -155,7 +155,7 @@ public class PetTestsCucumber extends BaseTest {
     @Then("verify pet by ID")//get last response and verify with pet
     public void verifyPetByID() {
         Object petId = ResponseHelper.getId(context.getResponse());
-        verify(context.getPet(), () -> petApi.getById(petId));
+        verify(() -> petApi.getById(petId), context.getPet());
     }
 
     @Then("delete pet and verify it passed")
@@ -206,7 +206,7 @@ public class PetTestsCucumber extends BaseTest {
     public void verifyPetByIDFromTheFirstCreatedPet() {
         Object petId = ResponseHelper.getId(context.getCreatePetResponse());
         System.out.println("Find pet by ID: "+ petId);
-        verify(context.getPet(), () -> petApi.getById(petId));
+        verify(() -> petApi.getById(petId), context.getPet());
     }
 
     @When("upload image '{string}'")

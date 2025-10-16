@@ -29,7 +29,7 @@ public class UpdatePetTests extends BaseTest {
         Response createResponse = petApi.create(pet);
         verifyStatusCode(createResponse, 200, "Create pet");
 
-        verify(pet, () -> petApi.getById(ResponseHelper.getId(createResponse)));
+        verify(() -> petApi.getById(ResponseHelper.getId(createResponse)), pet);
 
         pet
                 .updateName("new name")
@@ -42,6 +42,6 @@ public class UpdatePetTests extends BaseTest {
         verifyStatusCode(updateResponse, 200, "Update pet");
 
         Response getResponse = petApi.getById(ResponseHelper.getId(createResponse));
-        verify(pet, getResponse);
+        verify(getResponse, pet);
     }
 }
