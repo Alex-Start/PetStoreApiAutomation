@@ -11,7 +11,6 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.stream.Collectors;
 
-import static io.restassured.RestAssured.baseURI;
 import static io.restassured.http.ContentType.JSON;
 
 /**

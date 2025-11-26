@@ -90,13 +90,7 @@ public class VerifierResponse {
         }
         String actualName = actualResponse.jsonPath().getString("name");
         List<String> actualPhotoUrls = actualResponse.jsonPath().getList("photoUrls");
-        if (actualPhotoUrls == null) {
-            actualPhotoUrls = new ArrayList<>();
-        }
         List<Map<String, Object>> actualTags = actualResponse.jsonPath().getList("tags");
-        if (actualTags == null) {
-            actualTags = new ArrayList<>();
-        }
         String actualStatus = actualResponse.jsonPath().getString("status");
 
         if (expected.getCategory() != null) {
@@ -209,7 +203,7 @@ public class VerifierResponse {
         verifyInt("quantity", expected.getQuantity(), actualQuantity, errors);
         verify("shipDate", expected.getShipDate(), actualShipDate, errors);
         verify("status", expected.getStatus(), actualStatus, errors);
-        verifyBool("complete", expected.getComplete(), actualComplete, errors);
+        verifyBool("complete", expected.isComplete(), actualComplete, errors);
 
         // If errors exist, fail with all mismatches
         if (!errors.isEmpty()) {

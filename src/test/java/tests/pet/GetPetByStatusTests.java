@@ -20,12 +20,12 @@ public class GetPetByStatusTests extends BaseTest {
     public void testGetByStatus() throws JsonProcessingException {
         PetStatus petStatus = PetStatus.AVAILABLE;
 
-        Pet pet = new Pet.Builder()
-                .setCategory(Category.createCategoryDogs())
-                .setName("Buddy")
-                .setPhotoUrls(List.of("https://example.com/photo1.jpg"))
-                .setTags(List.of(new Tag(1, "Nice"), new Tag(2, "Black")))
-                .setStatus(petStatus)
+        Pet pet = Pet.builder()
+                .category(Category.createCategoryDogs())
+                .name("Buddy")
+                .photoUrls(List.of("https://example.com/photo1.jpg"))
+                .tags(List.of(new Tag(1, "Nice"), new Tag(2, "Black")))
+                .status(petStatus)
                 .build();
 
         Response createResponse = petApi.create(pet);

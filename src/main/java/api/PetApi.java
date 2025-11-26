@@ -11,7 +11,6 @@ import utils.CleanUpManager;
 
 import java.io.File;
 
-import static io.restassured.RestAssured.*;
 import static io.restassured.http.ContentType.JSON;
 
 /**

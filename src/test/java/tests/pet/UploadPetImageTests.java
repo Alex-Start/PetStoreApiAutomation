@@ -19,12 +19,12 @@ public class UploadPetImageTests extends BaseTest {
 
     @Test
     public void testUploadPetImage() throws JsonProcessingException {
-        Pet pet = new Pet.Builder()
-                .setCategory(Category.createCategoryCats())
-                .setName("Mur")
-                .setPhotoUrls(List.of("https://example.com/photo1.jpg"))
-                .setTags(List.of(new Tag(1, "Nice"), new Tag(2, "Black")))
-                .setStatus(PetStatus.AVAILABLE)
+        Pet pet = Pet.builder()
+                .category(Category.createCategoryCats())
+                .name("Mur")
+                .photoUrls(List.of("https://example.com/photo1.jpg"))
+                .tags(List.of(new Tag(1, "Nice"), new Tag(2, "Black")))
+                .status(PetStatus.AVAILABLE)
                 .build();
 
         Response createResponse = petApi.create(pet);

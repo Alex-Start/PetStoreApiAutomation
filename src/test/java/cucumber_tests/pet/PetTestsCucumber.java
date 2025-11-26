@@ -142,12 +142,12 @@ public class PetTestsCucumber extends BaseTest {
 
     @When("create pet with params '{category}', '{name}', '{photos}', '{tags}', '{petStatus}'")
     public void createPetWithParamsCategoryNamePhotosTagsStatus(Category category, String name, List<String> photos, List<Tag> tags, PetStatus status) throws JsonProcessingException {
-        context.setPet(new Pet.Builder()
-                .setCategory(category)
-                .setName(name)
-                .setPhotoUrls(photos)
-                .setTags(tags)
-                .setStatus(status)
+        context.setPet(Pet.builder()
+                .category(category)
+                .name(name)
+                .photoUrls(photos)
+                .tags(tags)
+                .status(status)
                 .build());
         context.setCreatePetResponse(petApi.create(context.getPet()));
     }

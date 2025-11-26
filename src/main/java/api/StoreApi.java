@@ -7,7 +7,6 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import utils.CleanUpManager;
 
-import static io.restassured.RestAssured.baseURI;
 import static io.restassured.http.ContentType.JSON;
 
 /**

@@ -20,23 +20,23 @@ public class CreateDeleteOrderTests extends BaseTest {
     @Test
     public void testCreateVerifyDelete() throws JsonProcessingException {
         List<String> photos = List.of("https://example.com/photo1.jpg");
-        Pet pet = new Pet.Builder()
-                .setCategory(Category.createCategoryDogs())
-                .setName("Buddy")
-                .setPhotoUrls(photos)
-                .setTags(Arrays.asList(new Tag(1, "Nice"), new Tag(2, "Black")))
-                .setStatus(PetStatus.AVAILABLE)
+        Pet pet = Pet.builder()
+                .category(Category.createCategoryDogs())
+                .name("Buddy")
+                .photoUrls(photos)
+                .tags(Arrays.asList(new Tag(1, "Nice"), new Tag(2, "Black")))
+                .status(PetStatus.AVAILABLE)
                 .build();
 
         Response petResponse = petApi.create(pet);
         verifyStatusCode(petResponse, 200, "Create pet");
 
-        Order order = new Order.Builder()
-                .setPedId(ResponseHelper.getIdLong(petResponse))
-                .setQuantity(2)
-                .setShipDate()
-                .setStatus("new")
-                .setComplete(false)
+        Order order = Order.builder()
+                .petId(ResponseHelper.getIdLong(petResponse))
+                .quantity(2)
+                .shipDate()
+                .status("new")
+                .complete(false)
                 .build();
 
         Response createResponse = storeApi.create(order);

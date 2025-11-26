@@ -93,13 +93,13 @@ public class CreateDeletePetTests extends BaseTest {
                 ,
                 {Category.createCategoryLions()
                         , simpleName
-                        , null
+                        , List.of()
                         , Arrays.asList(tag1, tag2)
                         , PetStatus.PENDING}
                 ,
                 {null
                         , numberName
-                        , null
+                        , List.of()
                         , Arrays.asList(tag1)
                         , null}
                 ,
@@ -113,12 +113,12 @@ public class CreateDeletePetTests extends BaseTest {
 
     @Test(dataProvider = "newPetParams")
     public void testCreateVerifyDeletePet(Category category, String name, List<String> photos, List<Tag> tags, PetStatus status) throws JsonProcessingException {
-        Pet pet = new Pet.Builder()
-                .setCategory(category)
-                .setName(name)
-                .setPhotoUrls(photos)
-                .setTags(tags)
-                .setStatus(status)
+        Pet pet = Pet.builder()
+                .category(category)
+                .name(name)
+                .photoUrls(photos)
+                .tags(tags)
+                .status(status)
                 .build();
 
         Response createResponse = petApi.create(pet);
