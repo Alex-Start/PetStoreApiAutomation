@@ -2,6 +2,7 @@ package model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import lombok.*;
 
 import java.time.ZoneOffset;
 import java.time.ZonedDateTime;
@@ -19,6 +20,10 @@ import java.util.Date;
  * }
  */
 @JsonInclude(JsonInclude.Include.NON_NULL)
+@Getter
+@Setter
+@NoArgsConstructor
+@ToString
 public class Order extends BaseModel implements IModel {
     @JsonProperty("id")
     private Number id;
@@ -33,106 +38,62 @@ public class Order extends BaseModel implements IModel {
     @JsonProperty("complete")
     private boolean complete;
 
-    private Order(Order.Builder builder) {
-        this.id = builder.id;
-        this.petId = builder.petId;
-        this.quantity = builder.quantity;
-        this.shipDate = dateToString(builder.shipDate);
-        this.status = builder.status;
-        this.complete = builder.complete;
+    @Builder(builderClassName = "OrderBuilder", toBuilder = true)
+    public Order(Number id, Number petId, int quantity, String shipDate, String status, boolean complete) {
+        this.id = id;
+        this.petId = petId;
+        this.quantity = quantity;
+        this.shipDate = shipDate;
+        this.status = status;
+        this.complete = complete;
     }
 
-    private String dateToString(Date date) {
-        ZonedDateTime zonedDateTime = date.toInstant().atZone(ZoneOffset.UTC);
-        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd'T'HH:mm:ss.SSSZ");
-        return zonedDateTime.format(formatter);
-    }
+    public static class OrderBuilder {
 
-    @Override
-    public String toString() {
-        return "Order{" +
-                "id=" + id +
-                ", petId=" + petId +
-                ", quantity=" + quantity +
-                ", shipDate=" + shipDate +
-                ", status='" + status + '\'' +
-                ", complete=" + complete +
-                '}';
-    }
+        private Date shipDateDateObj; // temporary Date holder instead of String
 
-    public static class Builder {
-        private Number id;
-        private Number petId;
-        private int quantity;
-        private Date shipDate;
-        private String status;
-        private boolean complete;
+        /** replace the original setShipDate() (no args) */
+        public OrderBuilder shipDate() {
+            return shipDateAsData(new Date());
+        }
 
-        public Builder setId(int id) {
-            this.id = id;
+        public OrderBuilder shipDate(String date) {
+            return shipDateAsData(new Date(date));
+        }
+
+        /** replace setShipDate(Date date) */
+        public OrderBuilder shipDateAsData(Date date) {
+            this.shipDateDateObj = date;
             return this;
         }
 
-        public Builder setPedId(Number petId) {
-            this.petId = petId;
-            return this;
+        public String getShipDate() {
+            return formatDate(shipDateDateObj);
         }
 
-        public Builder setQuantity(int quantity) {
-            this.quantity = quantity;
-            return this;
-        }
-
-        public Builder setShipDate() {
-            return setShipDate(new Date());
-        }
-
-        public Builder setShipDate(Date shipDate) {
-            this.shipDate = shipDate;
-            return this;
-        }
-
-        public Builder setStatus(String status) {
-            this.status = status;
-            return this;
-        }
-
-        public Builder setComplete(boolean complete) {
-            this.complete = complete;
-            return this;
-        }
-
+        /** Override Lombok build() to convert Date → formatted string */
         public Order build() {
-            return new Order(this);
+            Order order = new Order(
+                    id,
+                    petId,
+                    quantity,
+                    getShipDate(),
+                    status,
+                    complete
+            );
+            return order;
         }
 
-    }
-
-    public Number getId() {
-        return id;
-    }
-
-    public Number getPetId() {
-        return petId;
-    }
-
-    public int getQuantity() {
-        return quantity;
-    }
-
-    public String getShipDate() {
-        return shipDate;
-    }
-
-    public String getStatus() {
-        return status;
-    }
-
-    public boolean getComplete() {
-        return complete;
+        /** Date → shipDate ISO formatting */
+        private static String formatDate(Date date) {
+            if (date == null) return null;
+            ZonedDateTime zoned = date.toInstant().atZone(ZoneOffset.UTC);
+            DateTimeFormatter fmt = DateTimeFormatter.ofPattern("yyyy-MM-dd'T'HH:mm:ss.SSSZ");
+            return zoned.format(fmt);
+        }
     }
 
     public void updateId(Object id) {
-        this.id = (Number)id;
+        this.id = (Number) id;
     }
 }

@@ -2,8 +2,15 @@ package model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import lombok.*;
 
 @JsonInclude(JsonInclude.Include.NON_NULL)
+@Getter
+@Setter
+@Builder
+@NoArgsConstructor
+@AllArgsConstructor
+@ToString
 public class User extends BaseModel implements IModel {
     @JsonProperty("id")
     private Number id; // int or long
@@ -21,90 +28,6 @@ public class User extends BaseModel implements IModel {
     private String phone;
     @JsonProperty("userStatus")
     private int userStatus;
-
-    private User(User.Builder builder) {
-        this.id = builder.id;
-        this.username = builder.username;
-        this.firstname = builder.firstname;
-        this.lastname = builder.lastname;
-        this.email = builder.email;
-        this.password = builder.password;
-        this.phone = builder.phone;
-        this.userStatus = builder.userStatus;
-    }
-
-    @Override
-    public String toString() {
-        return "User{" +
-                (isZero(id) ? "" : " id=" + id + ", ") +
-                ", username='" + username + '\'' +
-                ", firstname='" + firstname + '\'' +
-                ", lastname='" + lastname + '\'' +
-                ", email='" + email + '\'' +
-                ", password='" + password + '\'' +
-                ", phone='" + phone + '\'' +
-                ", userStatus=" + userStatus +
-                '}';
-    }
-
-    public static class Builder {
-        private Number id;
-        private String username;
-        private String firstname;
-        private String lastname;
-        private String email;
-        private String password;
-        private String phone;
-        private int userStatus;
-
-        public Builder setId(int id) {
-            this.id = id;
-            return this;
-        }
-
-        public Builder setUsername(String username) {
-            this.username = username;
-            return this;
-        }
-
-        public Builder setFirstname(String firstname) {
-            this.firstname = firstname;
-            return this;
-        }
-
-        public Builder setLastname(String lastname) {
-            this.lastname = lastname;
-            return this;
-        }
-
-        public Builder setEmail(String email) {
-            this.email = email;
-            return this;
-        }
-
-        public Builder setPassword(String password) {
-            this.password = password;
-            return this;
-        }
-
-        public Builder setPhone(String phone) {
-            this.phone = phone;
-            return this;
-        }
-
-        public Builder setUserStatus(int userStatus) {
-            this.userStatus = userStatus;
-            return this;
-        }
-
-        public User build() {
-            return new User(this);
-        }
-    }
-
-    public Object getId() {
-        return id;
-    }
 
     public void updateId(Object id) {
         this.id = (Number)id;

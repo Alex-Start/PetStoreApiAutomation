@@ -16,23 +16,23 @@ public class CreateWIthListUserTests extends BaseTest {
 
     @Test
     public void testCreateWithListUser() throws JsonProcessingException {
-        User user1 = new User.Builder()
-                .setUsername("test-1")
-                .setFirstname("firstname-1")
-                .setLastname("lastname-1")
-                .setPassword("password-1")
-                .setEmail("some-1@email.com")
-                .setPhone("+123456")
-                .setUserStatus(0)
+        User user1 = User.builder()
+                .username("test-1")
+                .firstname("firstname-1")
+                .lastname("lastname-1")
+                .password("password-1")
+                .email("some-1@email.com")
+                .phone("+123456")
+                .userStatus(0)
                 .build();
-        User user2 = new User.Builder()
-                .setUsername("test-2")
-                .setFirstname("firstname-2")
-                .setLastname("lastname-2")
-                .setPassword("password-2")
-                .setEmail("some-2@email.com")
-                .setPhone("+456789")
-                .setUserStatus(1)
+        User user2 = User.builder()
+                .username("test-2")
+                .firstname("firstname-2")
+                .lastname("lastname-2")
+                .password("password-2")
+                .email("some-2@email.com")
+                .phone("+456789")
+                .userStatus(1)
                 .build();
 
         List<User> userList = Arrays.asList(user1, user2);

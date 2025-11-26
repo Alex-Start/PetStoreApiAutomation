@@ -7561,3 +7561,607 @@ Tag count mismatch: expected=2, actual=0
 2025-07-30 09:48:33 [main] INFO  verify.VerifierResponse - PASSED: Upload pet image
 2025-07-30 09:48:33 [main] INFO  listener.CustomCucumberListener - ✅ Scenario finished: Update pet image
 2025-07-30 09:48:33 [main] INFO  listener.TestListener - ==== TEST PASSED: runScenario ====
+2025-11-26 15:34:48 [main] INFO  org.testng.internal.Utils - [XmlSuite] [WARN] 'parallel' value 'false' is no longer valid, defaulting to 'none'.
+2025-11-26 15:34:49 [main] INFO  org.testng.internal.Utils - [TestNG] Running:
+  D:\Documents\IdeaProjects\PetStoreApiAutomation\testng.xml
+
+2025-11-26 15:34:49 [main] INFO  listener.TestListener - ==== STARTING TEST: testCreateVerifyDeletePet ====
+2025-11-26 15:34:49 [main] INFO  api.PetApi - --- Create Pet: Pet(id=null, category=Category(id=1, name=Dogs), name=Buddy, photoUrls=[https://side.com/photo1.jpg, https://side.com/photo2.jpg], tags=[Tag(id=1, name=Nice)], status=SOLD) ---
+2025-11-26 15:34:54 [main] INFO  api.PetApi - ID = 9223372036854775807
+2025-11-26 15:34:54 [main] INFO  verify.VerifierResponse - PASSED: Create pet
+2025-11-26 15:34:56 [main] INFO  api.PetApi - --- Get Pet by ID: 9223372036854775807 ---
+2025-11-26 15:34:56 [main] INFO  verify.VerifierResponse - === Verify Pet: Pet(id=9223372036854775807, category=Category(id=1, name=Dogs), name=Buddy, photoUrls=[https://side.com/photo1.jpg, https://side.com/photo2.jpg], tags=[Tag(id=1, name=Nice)], status=SOLD) ===
+2025-11-26 15:34:56 [main] INFO  verify.VerifierResponse - Actual Result: {id=9223372036854775807, category={id=1, name=Dogs}, name=Buddy, photoUrls=[https://side.com/photo1.jpg, https://side.com/photo2.jpg], tags=[{id=1, name=Nice}], status=SOLD}
+2025-11-26 15:34:56 [main] INFO  verify.VerifierResponse - PASSED: Status Code = 200 for response
+2025-11-26 15:34:56 [main] INFO  verify.VerifierResponse - PASSED: Category ID: expected=1, actual=1
+2025-11-26 15:34:56 [main] INFO  verify.VerifierResponse - PASSED: Category Name: expected=Dogs, actual=Dogs
+2025-11-26 15:34:56 [main] INFO  verify.VerifierResponse - PASSED: Pet Name: expected=Buddy, actual=Buddy
+2025-11-26 15:34:56 [main] INFO  verify.VerifierResponse - PASSED: Photo URLs: expected=[https://side.com/photo1.jpg, https://side.com/photo2.jpg], actual=[https://side.com/photo1.jpg, https://side.com/photo2.jpg]
+2025-11-26 15:34:56 [main] INFO  verify.VerifierResponse - PASSED: Pet Status: expected=SOLD, actual=SOLD
+2025-11-26 15:34:56 [main] INFO  verify.VerifierResponse - PASSED: Tag count: expected=1, actual=1
+2025-11-26 15:34:56 [main] INFO  verify.VerifierResponse - PASSED: Tag ID at index 0: expected=1, actual=1
+2025-11-26 15:34:56 [main] INFO  verify.VerifierResponse - PASSED: Tag Name at index 0: expected=Nice, actual=Nice
+2025-11-26 15:34:57 [awaitility-thread] INFO  api.PetApi - --- Delete Pet by ID: 9223372036854775807 ---
+2025-11-26 15:34:57 [awaitility-thread] INFO  verify.VerifierResponse - PASSED: Delete pet
+2025-11-26 15:34:58 [awaitility-thread] INFO  api.PetApi - --- Get Pet by ID: 9223372036854775807 ---
+2025-11-26 15:34:59 [awaitility-thread] INFO  verify.VerifierResponse - PASSED: Get deleted pet
+2025-11-26 15:34:59 [main] INFO  listener.TestListener - ==== TEST PASSED: testCreateVerifyDeletePet ====
+2025-11-26 15:34:59 [main] INFO  api.PetApi - --- Delete Pet by ID: 9223372036854775807 ---
+2025-11-26 15:34:59 [main] INFO  listener.TestListener - ==== STARTING TEST: testCreateVerifyDeletePet ====
+2025-11-26 15:34:59 [main] INFO  api.PetApi - --- Create Pet: Pet(id=null, category=Category(id=2, name=Cats), name=1, photoUrls=[https://side.com/photo1.jpg, https://side.com/photo2.jpg], tags=[Tag(id=1, name=Nice), Tag(id=2, name=Black)], status=AVAILABLE) ---
+2025-11-26 15:35:00 [main] INFO  api.PetApi - ID = 9223372036854775807
+2025-11-26 15:35:00 [main] INFO  verify.VerifierResponse - PASSED: Create pet
+2025-11-26 15:35:01 [main] INFO  api.PetApi - --- Get Pet by ID: 9223372036854775807 ---
+2025-11-26 15:35:02 [main] INFO  verify.VerifierResponse - === Verify Pet: Pet(id=9223372036854775807, category=Category(id=2, name=Cats), name=1, photoUrls=[https://side.com/photo1.jpg, https://side.com/photo2.jpg], tags=[Tag(id=1, name=Nice), Tag(id=2, name=Black)], status=AVAILABLE) ===
+2025-11-26 15:35:02 [main] INFO  verify.VerifierResponse - Actual Result: {id=9223372036854775807, category={id=2, name=Cats}, name=1, photoUrls=[https://side.com/photo1.jpg, https://side.com/photo2.jpg], tags=[{id=1, name=Nice}, {id=2, name=Black}], status=AVAILABLE}
+2025-11-26 15:35:02 [main] INFO  verify.VerifierResponse - PASSED: Status Code = 200 for response
+2025-11-26 15:35:02 [main] INFO  verify.VerifierResponse - PASSED: Category ID: expected=2, actual=2
+2025-11-26 15:35:02 [main] INFO  verify.VerifierResponse - PASSED: Category Name: expected=Cats, actual=Cats
+2025-11-26 15:35:02 [main] INFO  verify.VerifierResponse - PASSED: Pet Name: expected=1, actual=1
+2025-11-26 15:35:02 [main] INFO  verify.VerifierResponse - PASSED: Photo URLs: expected=[https://side.com/photo1.jpg, https://side.com/photo2.jpg], actual=[https://side.com/photo1.jpg, https://side.com/photo2.jpg]
+2025-11-26 15:35:02 [main] INFO  verify.VerifierResponse - PASSED: Pet Status: expected=AVAILABLE, actual=AVAILABLE
+2025-11-26 15:35:02 [main] INFO  verify.VerifierResponse - PASSED: Tag count: expected=2, actual=2
+2025-11-26 15:35:02 [main] INFO  verify.VerifierResponse - PASSED: Tag ID at index 0: expected=1, actual=1
+2025-11-26 15:35:02 [main] INFO  verify.VerifierResponse - PASSED: Tag Name at index 0: expected=Nice, actual=Nice
+2025-11-26 15:35:02 [main] INFO  verify.VerifierResponse - PASSED: Tag ID at index 1: expected=2, actual=2
+2025-11-26 15:35:02 [main] INFO  verify.VerifierResponse - PASSED: Tag Name at index 1: expected=Black, actual=Black
+2025-11-26 15:35:02 [awaitility-thread] INFO  api.PetApi - --- Delete Pet by ID: 9223372036854775807 ---
+2025-11-26 15:35:03 [awaitility-thread] INFO  verify.VerifierResponse - PASSED: Delete pet
+2025-11-26 15:35:03 [awaitility-thread] INFO  api.PetApi - --- Get Pet by ID: 9223372036854775807 ---
+2025-11-26 15:35:04 [awaitility-thread] INFO  verify.VerifierResponse - PASSED: Get deleted pet
+2025-11-26 15:35:04 [main] INFO  listener.TestListener - ==== TEST PASSED: testCreateVerifyDeletePet ====
+2025-11-26 15:35:04 [main] INFO  api.PetApi - --- Delete Pet by ID: 9223372036854775807 ---
+2025-11-26 15:35:05 [main] INFO  listener.TestListener - ==== STARTING TEST: testCreateVerifyDeletePet ====
+2025-11-26 15:35:05 [main] INFO  api.PetApi - --- Create Pet: Pet(id=null, category=Category(id=3, name=Rabbits), name=Mr. dj, photoUrls=[https://side.com/photo1.jpg, https://side.com/photo2.jpg], tags=[Tag(id=1, name=Nice), Tag(id=2, name=Black)], status=null) ---
+2025-11-26 15:35:05 [main] INFO  api.PetApi - ID = 9223372036854775807
+2025-11-26 15:35:05 [main] INFO  verify.VerifierResponse - PASSED: Create pet
+2025-11-26 15:35:06 [main] INFO  api.PetApi - --- Get Pet by ID: 9223372036854775807 ---
+2025-11-26 15:35:07 [main] INFO  verify.VerifierResponse - === Verify Pet: Pet(id=9223372036854775807, category=Category(id=3, name=Rabbits), name=Mr. dj, photoUrls=[https://side.com/photo1.jpg, https://side.com/photo2.jpg], tags=[Tag(id=1, name=Nice), Tag(id=2, name=Black)], status=null) ===
+2025-11-26 15:35:07 [main] INFO  verify.VerifierResponse - Actual Result: {id=9223372036854775807, category={id=3, name=Rabbits}, name=Mr. dj, photoUrls=[https://side.com/photo1.jpg, https://side.com/photo2.jpg], tags=[{id=1, name=Nice}, {id=2, name=Black}]}
+2025-11-26 15:35:07 [main] INFO  verify.VerifierResponse - PASSED: Status Code = 200 for response
+2025-11-26 15:35:07 [main] INFO  verify.VerifierResponse - PASSED: Category ID: expected=3, actual=3
+2025-11-26 15:35:07 [main] INFO  verify.VerifierResponse - PASSED: Category Name: expected=Rabbits, actual=Rabbits
+2025-11-26 15:35:07 [main] INFO  verify.VerifierResponse - PASSED: Pet Name: expected=Mr. dj, actual=Mr. dj
+2025-11-26 15:35:07 [main] INFO  verify.VerifierResponse - PASSED: Photo URLs: expected=[https://side.com/photo1.jpg, https://side.com/photo2.jpg], actual=[https://side.com/photo1.jpg, https://side.com/photo2.jpg]
+2025-11-26 15:35:07 [main] INFO  verify.VerifierResponse - PASSED: Tag count: expected=2, actual=2
+2025-11-26 15:35:07 [main] INFO  verify.VerifierResponse - PASSED: Tag ID at index 0: expected=1, actual=1
+2025-11-26 15:35:07 [main] INFO  verify.VerifierResponse - PASSED: Tag Name at index 0: expected=Nice, actual=Nice
+2025-11-26 15:35:07 [main] INFO  verify.VerifierResponse - PASSED: Tag ID at index 1: expected=2, actual=2
+2025-11-26 15:35:07 [main] INFO  verify.VerifierResponse - PASSED: Tag Name at index 1: expected=Black, actual=Black
+2025-11-26 15:35:08 [awaitility-thread] INFO  api.PetApi - --- Delete Pet by ID: 9223372036854775807 ---
+2025-11-26 15:35:08 [awaitility-thread] INFO  verify.VerifierResponse - PASSED: Delete pet
+2025-11-26 15:35:09 [awaitility-thread] INFO  api.PetApi - --- Get Pet by ID: 9223372036854775807 ---
+2025-11-26 15:35:09 [awaitility-thread] INFO  verify.VerifierResponse - PASSED: Get deleted pet
+2025-11-26 15:35:09 [main] INFO  listener.TestListener - ==== TEST PASSED: testCreateVerifyDeletePet ====
+2025-11-26 15:35:09 [main] INFO  api.PetApi - --- Delete Pet by ID: 9223372036854775807 ---
+2025-11-26 15:35:10 [main] INFO  listener.TestListener - ==== STARTING TEST: testCreateVerifyDeletePet ====
+2025-11-26 15:35:10 [main] INFO  api.PetApi - --- Create Pet: Pet(id=null, category=Category(id=4, name=Lions), name=null, photoUrls=[https://side.com/photo1.jpg], tags=[Tag(id=1, name=Nice), Tag(id=2, name=Black)], status=SOLD) ---
+2025-11-26 15:35:10 [main] INFO  api.PetApi - ID = 9223372036854775807
+2025-11-26 15:35:10 [main] INFO  verify.VerifierResponse - PASSED: Create pet
+2025-11-26 15:35:12 [main] INFO  api.PetApi - --- Get Pet by ID: 9223372036854775807 ---
+2025-11-26 15:35:12 [main] INFO  verify.VerifierResponse - === Verify Pet: Pet(id=9223372036854775807, category=Category(id=4, name=Lions), name=null, photoUrls=[https://side.com/photo1.jpg], tags=[Tag(id=1, name=Nice), Tag(id=2, name=Black)], status=SOLD) ===
+2025-11-26 15:35:12 [main] INFO  verify.VerifierResponse - Actual Result: {id=9223372036854775807, category={id=4, name=Lions}, photoUrls=[https://side.com/photo1.jpg], tags=[{id=1, name=Nice}, {id=2, name=Black}], status=SOLD}
+2025-11-26 15:35:12 [main] INFO  verify.VerifierResponse - PASSED: Status Code = 200 for response
+2025-11-26 15:35:12 [main] INFO  verify.VerifierResponse - PASSED: Category ID: expected=4, actual=4
+2025-11-26 15:35:12 [main] INFO  verify.VerifierResponse - PASSED: Category Name: expected=Lions, actual=Lions
+2025-11-26 15:35:12 [main] INFO  verify.VerifierResponse - PASSED: Pet Name: expected=null, actual=null
+2025-11-26 15:35:12 [main] INFO  verify.VerifierResponse - PASSED: Photo URLs: expected=[https://side.com/photo1.jpg], actual=[https://side.com/photo1.jpg]
+2025-11-26 15:35:12 [main] INFO  verify.VerifierResponse - PASSED: Pet Status: expected=SOLD, actual=SOLD
+2025-11-26 15:35:12 [main] INFO  verify.VerifierResponse - PASSED: Tag count: expected=2, actual=2
+2025-11-26 15:35:12 [main] INFO  verify.VerifierResponse - PASSED: Tag ID at index 0: expected=1, actual=1
+2025-11-26 15:35:12 [main] INFO  verify.VerifierResponse - PASSED: Tag Name at index 0: expected=Nice, actual=Nice
+2025-11-26 15:35:12 [main] INFO  verify.VerifierResponse - PASSED: Tag ID at index 1: expected=2, actual=2
+2025-11-26 15:35:12 [main] INFO  verify.VerifierResponse - PASSED: Tag Name at index 1: expected=Black, actual=Black
+2025-11-26 15:35:13 [awaitility-thread] INFO  api.PetApi - --- Delete Pet by ID: 9223372036854775807 ---
+2025-11-26 15:35:13 [awaitility-thread] INFO  verify.VerifierResponse - PASSED: Delete pet
+2025-11-26 15:35:14 [awaitility-thread] INFO  api.PetApi - --- Get Pet by ID: 9223372036854775807 ---
+2025-11-26 15:35:15 [awaitility-thread] INFO  verify.VerifierResponse - PASSED: Get deleted pet
+2025-11-26 15:35:15 [main] INFO  listener.TestListener - ==== TEST PASSED: testCreateVerifyDeletePet ====
+2025-11-26 15:35:15 [main] INFO  api.PetApi - --- Delete Pet by ID: 9223372036854775807 ---
+2025-11-26 15:35:15 [main] INFO  listener.TestListener - ==== STARTING TEST: testCreateVerifyDeletePet ====
+2025-11-26 15:35:15 [main] INFO  api.PetApi - --- Create Pet: Pet(id=null, category=Category(id=4, name=Lions), name=Buddy, photoUrls=[https://side.com/photo1.jpg], tags=null, status=AVAILABLE) ---
+2025-11-26 15:35:16 [main] INFO  api.PetApi - ID = 9223372036854775807
+2025-11-26 15:35:16 [main] INFO  verify.VerifierResponse - PASSED: Create pet
+2025-11-26 15:35:17 [main] INFO  api.PetApi - --- Get Pet by ID: 9223372036854775807 ---
+2025-11-26 15:35:18 [main] INFO  verify.VerifierResponse - === Verify Pet: Pet(id=9223372036854775807, category=Category(id=4, name=Lions), name=Buddy, photoUrls=[https://side.com/photo1.jpg], tags=null, status=AVAILABLE) ===
+2025-11-26 15:35:18 [main] INFO  verify.VerifierResponse - Actual Result: {id=9223372036854775807, category={id=4, name=Lions}, name=Buddy, photoUrls=[https://side.com/photo1.jpg], tags=[], status=AVAILABLE}
+2025-11-26 15:35:18 [main] INFO  verify.VerifierResponse - PASSED: Status Code = 200 for response
+2025-11-26 15:35:18 [main] INFO  verify.VerifierResponse - PASSED: Category ID: expected=4, actual=4
+2025-11-26 15:35:18 [main] INFO  verify.VerifierResponse - PASSED: Category Name: expected=Lions, actual=Lions
+2025-11-26 15:35:18 [main] INFO  verify.VerifierResponse - PASSED: Pet Name: expected=Buddy, actual=Buddy
+2025-11-26 15:35:18 [main] INFO  verify.VerifierResponse - PASSED: Photo URLs: expected=[https://side.com/photo1.jpg], actual=[https://side.com/photo1.jpg]
+2025-11-26 15:35:18 [main] INFO  verify.VerifierResponse - PASSED: Pet Status: expected=AVAILABLE, actual=AVAILABLE
+2025-11-26 15:35:18 [awaitility-thread] INFO  api.PetApi - --- Delete Pet by ID: 9223372036854775807 ---
+2025-11-26 15:35:19 [awaitility-thread] INFO  verify.VerifierResponse - PASSED: Delete pet
+2025-11-26 15:35:19 [awaitility-thread] INFO  api.PetApi - --- Get Pet by ID: 9223372036854775807 ---
+2025-11-26 15:35:20 [awaitility-thread] INFO  verify.VerifierResponse - PASSED: Get deleted pet
+2025-11-26 15:35:20 [main] INFO  listener.TestListener - ==== TEST PASSED: testCreateVerifyDeletePet ====
+2025-11-26 15:35:20 [main] INFO  api.PetApi - --- Delete Pet by ID: 9223372036854775807 ---
+2025-11-26 15:35:20 [main] INFO  listener.TestListener - ==== STARTING TEST: testCreateVerifyDeletePet ====
+2025-11-26 15:35:20 [main] INFO  api.PetApi - --- Create Pet: Pet(id=null, category=Category(id=4, name=Lions), name=Buddy, photoUrls=[], tags=[Tag(id=1, name=Nice), Tag(id=2, name=Black)], status=PENDING) ---
+2025-11-26 15:35:21 [main] INFO  api.PetApi - ID = 9223372036854775807
+2025-11-26 15:35:21 [main] INFO  verify.VerifierResponse - PASSED: Create pet
+2025-11-26 15:35:22 [main] INFO  api.PetApi - --- Get Pet by ID: 9223372036854775807 ---
+2025-11-26 15:35:23 [main] INFO  verify.VerifierResponse - === Verify Pet: Pet(id=9223372036854775807, category=Category(id=4, name=Lions), name=Buddy, photoUrls=[], tags=[Tag(id=1, name=Nice), Tag(id=2, name=Black)], status=PENDING) ===
+2025-11-26 15:35:23 [main] INFO  verify.VerifierResponse - Actual Result: {id=9223372036854775807, category={id=4, name=Lions}, name=Buddy, photoUrls=[], tags=[{id=1, name=Nice}, {id=2, name=Black}], status=PENDING}
+2025-11-26 15:35:23 [main] INFO  verify.VerifierResponse - PASSED: Status Code = 200 for response
+2025-11-26 15:35:23 [main] INFO  verify.VerifierResponse - PASSED: Category ID: expected=4, actual=4
+2025-11-26 15:35:23 [main] INFO  verify.VerifierResponse - PASSED: Category Name: expected=Lions, actual=Lions
+2025-11-26 15:35:23 [main] INFO  verify.VerifierResponse - PASSED: Pet Name: expected=Buddy, actual=Buddy
+2025-11-26 15:35:23 [main] INFO  verify.VerifierResponse - PASSED: Photo URLs: expected=[], actual=[]
+2025-11-26 15:35:23 [main] INFO  verify.VerifierResponse - PASSED: Pet Status: expected=PENDING, actual=PENDING
+2025-11-26 15:35:23 [main] INFO  verify.VerifierResponse - PASSED: Tag count: expected=2, actual=2
+2025-11-26 15:35:23 [main] INFO  verify.VerifierResponse - PASSED: Tag ID at index 0: expected=1, actual=1
+2025-11-26 15:35:23 [main] INFO  verify.VerifierResponse - PASSED: Tag Name at index 0: expected=Nice, actual=Nice
+2025-11-26 15:35:23 [main] INFO  verify.VerifierResponse - PASSED: Tag ID at index 1: expected=2, actual=2
+2025-11-26 15:35:23 [main] INFO  verify.VerifierResponse - PASSED: Tag Name at index 1: expected=Black, actual=Black
+2025-11-26 15:35:23 [awaitility-thread] INFO  api.PetApi - --- Delete Pet by ID: 9223372036854775807 ---
+2025-11-26 15:35:24 [awaitility-thread] INFO  verify.VerifierResponse - PASSED: Delete pet
+2025-11-26 15:35:24 [awaitility-thread] INFO  api.PetApi - --- Get Pet by ID: 9223372036854775807 ---
+2025-11-26 15:35:25 [awaitility-thread] INFO  verify.VerifierResponse - PASSED: Get deleted pet
+2025-11-26 15:35:25 [main] INFO  listener.TestListener - ==== TEST PASSED: testCreateVerifyDeletePet ====
+2025-11-26 15:35:25 [main] INFO  api.PetApi - --- Delete Pet by ID: 9223372036854775807 ---
+2025-11-26 15:35:26 [main] INFO  listener.TestListener - ==== STARTING TEST: testCreateVerifyDeletePet ====
+2025-11-26 15:35:26 [main] INFO  api.PetApi - --- Create Pet: Pet(id=null, category=null, name=1, photoUrls=[], tags=[Tag(id=1, name=Nice)], status=null) ---
+2025-11-26 15:35:26 [main] INFO  api.PetApi - ID = 9223372036854775807
+2025-11-26 15:35:26 [main] INFO  verify.VerifierResponse - PASSED: Create pet
+2025-11-26 15:35:27 [main] INFO  api.PetApi - --- Get Pet by ID: 9223372036854775807 ---
+2025-11-26 15:35:28 [main] INFO  verify.VerifierResponse - === Verify Pet: Pet(id=9223372036854775807, category=null, name=1, photoUrls=[], tags=[Tag(id=1, name=Nice)], status=null) ===
+2025-11-26 15:35:28 [main] INFO  verify.VerifierResponse - Actual Result: {id=9223372036854775807, name=1, photoUrls=[], tags=[{id=1, name=Nice}]}
+2025-11-26 15:35:28 [main] INFO  verify.VerifierResponse - PASSED: Status Code = 200 for response
+2025-11-26 15:35:28 [main] INFO  verify.VerifierResponse - PASSED: Category ID: expected=0, actual=0
+2025-11-26 15:35:28 [main] INFO  verify.VerifierResponse - PASSED: Pet Name: expected=1, actual=1
+2025-11-26 15:35:28 [main] INFO  verify.VerifierResponse - PASSED: Photo URLs: expected=[], actual=[]
+2025-11-26 15:35:28 [main] INFO  verify.VerifierResponse - PASSED: Tag count: expected=1, actual=1
+2025-11-26 15:35:28 [main] INFO  verify.VerifierResponse - PASSED: Tag ID at index 0: expected=1, actual=1
+2025-11-26 15:35:28 [main] INFO  verify.VerifierResponse - PASSED: Tag Name at index 0: expected=Nice, actual=Nice
+2025-11-26 15:35:29 [awaitility-thread] INFO  api.PetApi - --- Delete Pet by ID: 9223372036854775807 ---
+2025-11-26 15:35:29 [awaitility-thread] INFO  verify.VerifierResponse - PASSED: Delete pet
+2025-11-26 15:35:30 [awaitility-thread] INFO  api.PetApi - --- Get Pet by ID: 9223372036854775807 ---
+2025-11-26 15:35:30 [main] INFO  listener.TestListener - ==== TEST PASSED: testCreateVerifyDeletePet ====
+2025-11-26 15:35:30 [main] INFO  api.PetApi - --- Delete Pet by ID: 9223372036854775807 ---
+2025-11-26 15:35:31 [main] INFO  listener.TestListener - ==== STARTING TEST: testCreateVerifyDeletePet ====
+2025-11-26 15:35:31 [main] INFO  api.PetApi - --- Create Pet: Pet(id=null, category=Category(id=4, name=Lions), name=e, photoUrls=[https://side.com/photo1.jpg, https://side.com/photo2.jpg], tags=null, status=null) ---
+2025-11-26 15:35:31 [main] INFO  api.PetApi - ID = 9223372036854775807
+2025-11-26 15:35:31 [main] INFO  verify.VerifierResponse - PASSED: Create pet
+2025-11-26 15:35:32 [main] INFO  api.PetApi - --- Get Pet by ID: 9223372036854775807 ---
+2025-11-26 15:35:33 [main] INFO  verify.VerifierResponse - === Verify Pet: Pet(id=9223372036854775807, category=Category(id=4, name=Lions), name=e, photoUrls=[https://side.com/photo1.jpg, https://side.com/photo2.jpg], tags=null, status=null) ===
+2025-11-26 15:35:33 [main] INFO  verify.VerifierResponse - Actual Result: {id=9223372036854775807, category={id=4, name=Lions}, name=e, photoUrls=[https://side.com/photo1.jpg, https://side.com/photo2.jpg], tags=[]}
+2025-11-26 15:35:33 [main] INFO  verify.VerifierResponse - PASSED: Status Code = 200 for response
+2025-11-26 15:35:33 [main] INFO  verify.VerifierResponse - PASSED: Category ID: expected=4, actual=4
+2025-11-26 15:35:33 [main] INFO  verify.VerifierResponse - PASSED: Category Name: expected=Lions, actual=Lions
+2025-11-26 15:35:33 [main] INFO  verify.VerifierResponse - PASSED: Pet Name: expected=e, actual=e
+2025-11-26 15:35:33 [main] INFO  verify.VerifierResponse - PASSED: Photo URLs: expected=[https://side.com/photo1.jpg, https://side.com/photo2.jpg], actual=[https://side.com/photo1.jpg, https://side.com/photo2.jpg]
+2025-11-26 15:35:34 [awaitility-thread] INFO  api.PetApi - --- Delete Pet by ID: 9223372036854775807 ---
+2025-11-26 15:35:34 [awaitility-thread] INFO  verify.VerifierResponse - PASSED: Delete pet
+2025-11-26 15:35:35 [awaitility-thread] INFO  api.PetApi - --- Get Pet by ID: 9223372036854775807 ---
+2025-11-26 15:35:35 [awaitility-thread] INFO  verify.VerifierResponse - PASSED: Get deleted pet
+2025-11-26 15:35:35 [main] INFO  listener.TestListener - ==== TEST PASSED: testCreateVerifyDeletePet ====
+2025-11-26 15:35:35 [main] INFO  api.PetApi - --- Delete Pet by ID: 9223372036854775807 ---
+2025-11-26 15:35:36 [main] INFO  listener.TestListener - ==== STARTING TEST: testUpdatePet ====
+2025-11-26 15:35:36 [main] INFO  api.PetApi - --- Create Pet: Pet(id=null, category=Category(id=1, name=Dogs), name=Buddy, photoUrls=[https://example.com/photo1.jpg], tags=[Tag(id=1, name=Nice), Tag(id=2, name=Black)], status=AVAILABLE) ---
+2025-11-26 15:35:36 [main] INFO  api.PetApi - ID = 9223372036854775807
+2025-11-26 15:35:36 [main] INFO  verify.VerifierResponse - PASSED: Create pet
+2025-11-26 15:35:38 [main] INFO  api.PetApi - --- Get Pet by ID: 9223372036854775807 ---
+2025-11-26 15:35:39 [main] INFO  verify.VerifierResponse - === Verify Pet: Pet(id=9223372036854775807, category=Category(id=1, name=Dogs), name=Buddy, photoUrls=[https://example.com/photo1.jpg], tags=[Tag(id=1, name=Nice), Tag(id=2, name=Black)], status=AVAILABLE) ===
+2025-11-26 15:35:39 [main] INFO  verify.VerifierResponse - Actual Result: {id=9223372036854775807, category={id=0, name=string}, name=doggie, photoUrls=[string], tags=[{id=0, name=string}], status=string}
+2025-11-26 15:35:39 [main] INFO  verify.VerifierResponse - PASSED: Status Code = 200 for response
+2025-11-26 15:35:39 [main] ERROR listener.TestListener - ==== TEST FAILED: testUpdatePet ====
+2025-11-26 15:35:39 [main] INFO  api.PetApi - --- Delete Pet by ID: 9223372036854775807 ---
+2025-11-26 15:35:39 [main] INFO  listener.TestListener - ==== STARTING TEST: testGetByStatus ====
+2025-11-26 15:35:39 [main] INFO  api.PetApi - --- Create Pet: Pet(id=null, category=Category(id=1, name=Dogs), name=Buddy, photoUrls=[https://example.com/photo1.jpg], tags=[Tag(id=1, name=Nice), Tag(id=2, name=Black)], status=AVAILABLE) ---
+2025-11-26 15:35:40 [main] INFO  api.PetApi - ID = 9223372036854775807
+2025-11-26 15:35:40 [main] INFO  verify.VerifierResponse - PASSED: Create pet
+2025-11-26 15:35:40 [main] INFO  api.PetApi - --- Get Pet by status: AVAILABLE ---
+2025-11-26 15:35:41 [main] INFO  verify.VerifierResponse - PASSED: Get pets by status AVAILABLE
+2025-11-26 15:35:41 [main] INFO  listener.TestListener - ==== TEST PASSED: testGetByStatus ====
+2025-11-26 15:35:41 [main] INFO  api.PetApi - --- Delete Pet by ID: 9223372036854775807 ---
+2025-11-26 15:35:41 [main] INFO  listener.TestListener - ==== STARTING TEST: testUploadPetImage ====
+2025-11-26 15:35:41 [main] INFO  api.PetApi - --- Create Pet: Pet(id=null, category=Category(id=2, name=Cats), name=Mur, photoUrls=[https://example.com/photo1.jpg], tags=[Tag(id=1, name=Nice), Tag(id=2, name=Black)], status=AVAILABLE) ---
+2025-11-26 15:35:42 [main] INFO  api.PetApi - ID = 9223372036854775807
+2025-11-26 15:35:42 [main] INFO  verify.VerifierResponse - PASSED: Create pet
+2025-11-26 15:35:42 [main] INFO  verify.VerifierResponse - PASSED: Upload pet image
+2025-11-26 15:35:42 [main] INFO  listener.TestListener - ==== TEST PASSED: testUploadPetImage ====
+2025-11-26 15:35:42 [main] INFO  api.PetApi - --- Delete Pet by ID: 9223372036854775807 ---
+2025-11-26 15:35:43 [main] INFO  listener.TestListener - ==== STARTING TEST: testUpdatePetInStore ====
+2025-11-26 15:35:43 [main] INFO  api.PetApi - --- Create Pet: Pet(id=null, category=Category(id=1, name=Dogs), name=Buddy, photoUrls=[https://example.com/photo1.jpg], tags=[Tag(id=1, name=Nice), Tag(id=2, name=Black)], status=AVAILABLE) ---
+2025-11-26 15:35:43 [main] INFO  api.PetApi - ID = 9223372036854775807
+2025-11-26 15:35:43 [main] INFO  verify.VerifierResponse - PASSED: Create pet
+2025-11-26 15:35:45 [main] INFO  api.PetApi - --- Get Pet by ID: 9223372036854775807 ---
+2025-11-26 15:35:45 [main] INFO  verify.VerifierResponse - === Verify Pet: Pet(id=9223372036854775807, category=Category(id=1, name=Dogs), name=Buddy, photoUrls=[https://example.com/photo1.jpg], tags=[Tag(id=1, name=Nice), Tag(id=2, name=Black)], status=AVAILABLE) ===
+2025-11-26 15:35:45 [main] INFO  verify.VerifierResponse - Actual Result: {id=9223372036854775807, category={id=1, name=Dogs}, name=Buddy, photoUrls=[https://example.com/photo1.jpg], tags=[{id=1, name=Nice}, {id=2, name=Black}], status=AVAILABLE}
+2025-11-26 15:35:45 [main] INFO  verify.VerifierResponse - PASSED: Status Code = 200 for response
+2025-11-26 15:35:45 [main] INFO  verify.VerifierResponse - PASSED: Category ID: expected=1, actual=1
+2025-11-26 15:35:45 [main] INFO  verify.VerifierResponse - PASSED: Category Name: expected=Dogs, actual=Dogs
+2025-11-26 15:35:45 [main] INFO  verify.VerifierResponse - PASSED: Pet Name: expected=Buddy, actual=Buddy
+2025-11-26 15:35:45 [main] INFO  verify.VerifierResponse - PASSED: Photo URLs: expected=[https://example.com/photo1.jpg], actual=[https://example.com/photo1.jpg]
+2025-11-26 15:35:45 [main] INFO  verify.VerifierResponse - PASSED: Pet Status: expected=AVAILABLE, actual=AVAILABLE
+2025-11-26 15:35:45 [main] INFO  verify.VerifierResponse - PASSED: Tag count: expected=2, actual=2
+2025-11-26 15:35:45 [main] INFO  verify.VerifierResponse - PASSED: Tag ID at index 0: expected=1, actual=1
+2025-11-26 15:35:45 [main] INFO  verify.VerifierResponse - PASSED: Tag Name at index 0: expected=Nice, actual=Nice
+2025-11-26 15:35:45 [main] INFO  verify.VerifierResponse - PASSED: Tag ID at index 1: expected=2, actual=2
+2025-11-26 15:35:45 [main] INFO  verify.VerifierResponse - PASSED: Tag Name at index 1: expected=Black, actual=Black
+2025-11-26 15:35:45 [main] INFO  api.PetApi - --- Update Pet in Store by ID: 9223372036854775807, Pet: Pet(id=9223372036854775807, category=Category(id=1, name=Dogs), name=new name, photoUrls=[https://example.com/photo1.jpg], tags=[Tag(id=1, name=Nice), Tag(id=2, name=Black)], status=SOLD) ---
+2025-11-26 15:35:46 [main] INFO  verify.VerifierResponse - PASSED: Update pet
+2025-11-26 15:35:47 [main] INFO  api.PetApi - --- Get Pet by ID: 9223372036854775807 ---
+2025-11-26 15:35:48 [main] INFO  verify.VerifierResponse - === Verify Pet: Pet(id=9223372036854775807, category=Category(id=1, name=Dogs), name=new name, photoUrls=[https://example.com/photo1.jpg], tags=[Tag(id=1, name=Nice), Tag(id=2, name=Black)], status=SOLD) ===
+2025-11-26 15:35:48 [main] INFO  verify.VerifierResponse - Actual Result: {id=9223372036854775807, category={id=0, name=string}, name=new name, photoUrls=[string], tags=[{id=0, name=string}], status=SOLD}
+2025-11-26 15:35:48 [main] INFO  verify.VerifierResponse - PASSED: Status Code = 200 for response
+2025-11-26 15:35:48 [main] INFO  verify.VerifierResponse - PASSED: Pet Name: expected=new name, actual=new name
+2025-11-26 15:35:48 [main] INFO  verify.VerifierResponse - PASSED: Pet Status: expected=SOLD, actual=SOLD
+2025-11-26 15:35:48 [main] ERROR listener.TestListener - ==== TEST FAILED: testUpdatePetInStore ====
+2025-11-26 15:35:48 [main] INFO  api.PetApi - --- Delete Pet by ID: 9223372036854775807 ---
+2025-11-26 15:35:48 [main] INFO  listener.TestListener - ==== STARTING TEST: testCreateVerifyDeleteUser ====
+2025-11-26 15:35:48 [main] INFO  api.UserApi - --- Create User: User(id=null, username=test2025-11-26T15:35:48.883+01:00, firstname=firstname1, lastname=lastname1, email=some@email.com, password=password1, phone=+123456, userStatus=0) ---
+2025-11-26 15:35:49 [main] INFO  verify.VerifierResponse - PASSED: Create user
+2025-11-26 15:35:50 [main] INFO  api.UserApi - --- Get User by username: test2025-11-26T15:35:48.883+01:00 ---
+2025-11-26 15:35:51 [main] INFO  verify.VerifierResponse - === Verify User: User(id=9222968140497193022, username=test2025-11-26T15:35:48.883+01:00, firstname=firstname1, lastname=lastname1, email=some@email.com, password=password1, phone=+123456, userStatus=0) ===
+2025-11-26 15:35:51 [main] INFO  verify.VerifierResponse - Actual Result: {id=9222968140497193022, username=test2025-11-26T15:35:48.883+01:00, email=some@email.com, password=password1, phone=+123456, userStatus=0}
+2025-11-26 15:35:51 [main] INFO  verify.VerifierResponse - PASSED: Status Code = 200 for response
+2025-11-26 15:35:51 [main] INFO  verify.VerifierResponse - PASSED: Username: expected=test2025-11-26T15:35:48.883+01:00, actual=test2025-11-26T15:35:48.883+01:00
+2025-11-26 15:35:51 [main] INFO  verify.VerifierResponse - PASSED: Email: expected=some@email.com, actual=some@email.com
+2025-11-26 15:35:51 [main] INFO  verify.VerifierResponse - PASSED: Password: expected=password1, actual=password1
+2025-11-26 15:35:51 [main] INFO  verify.VerifierResponse - PASSED: Phone: expected=+123456, actual=+123456
+2025-11-26 15:35:51 [main] INFO  verify.VerifierResponse - PASSED: User Status: expected=0, actual=0
+2025-11-26 15:35:51 [main] ERROR listener.TestListener - ==== TEST FAILED: testCreateVerifyDeleteUser ====
+2025-11-26 15:35:51 [main] INFO  api.UserApi - --- Delete User by username: test2025-11-26T15:35:48.883+01:00 ---
+2025-11-26 15:35:51 [main] INFO  listener.TestListener - ==== STARTING TEST: testCreateWithListUser ====
+2025-11-26 15:35:51 [main] INFO  api.UserApi - --- Create Users: [User(id=null, username=test-1, firstname=firstname-1, lastname=lastname-1, email=some-1@email.com, password=password-1, phone=+123456, userStatus=0), User(id=null, username=test-2, firstname=firstname-2, lastname=lastname-2, email=some-2@email.com, password=password-2, phone=+456789, userStatus=1)] ---
+2025-11-26 15:35:52 [main] INFO  verify.VerifierResponse - PASSED: Create users: [User(id=null, username=test-1, firstname=firstname-1, lastname=lastname-1, email=some-1@email.com, password=password-1, phone=+123456, userStatus=0), User(id=null, username=test-2, firstname=firstname-2, lastname=lastname-2, email=some-2@email.com, password=password-2, phone=+456789, userStatus=1)]
+2025-11-26 15:35:53 [main] INFO  api.UserApi - --- Get User by username: test-1 ---
+2025-11-26 15:35:54 [main] INFO  verify.VerifierResponse - === Verify User: User(id=9222968140497193022, username=test-1, firstname=firstname-1, lastname=lastname-1, email=some-1@email.com, password=password-1, phone=+123456, userStatus=0) ===
+2025-11-26 15:35:54 [main] INFO  verify.VerifierResponse - Actual Result: {id=9222968140497193022, username=test-1, email=some-1@email.com, password=password-1, phone=+123456, userStatus=0}
+2025-11-26 15:35:54 [main] INFO  verify.VerifierResponse - PASSED: Status Code = 200 for response
+2025-11-26 15:35:54 [main] INFO  verify.VerifierResponse - PASSED: Username: expected=test-1, actual=test-1
+2025-11-26 15:35:54 [main] INFO  verify.VerifierResponse - PASSED: Email: expected=some-1@email.com, actual=some-1@email.com
+2025-11-26 15:35:54 [main] INFO  verify.VerifierResponse - PASSED: Password: expected=password-1, actual=password-1
+2025-11-26 15:35:54 [main] INFO  verify.VerifierResponse - PASSED: Phone: expected=+123456, actual=+123456
+2025-11-26 15:35:54 [main] INFO  verify.VerifierResponse - PASSED: User Status: expected=0, actual=0
+2025-11-26 15:35:54 [main] ERROR listener.TestListener - ==== TEST FAILED: testCreateWithListUser ====
+2025-11-26 15:35:54 [main] INFO  api.UserApi - --- Delete User by username: test-1 ---
+2025-11-26 15:35:54 [main] INFO  api.UserApi - --- Delete User by username: test-2 ---
+2025-11-26 15:35:55 [main] INFO  listener.TestListener - ==== STARTING TEST: testLoginLogoutUser ====
+2025-11-26 15:35:55 [main] INFO  api.UserApi - --- Create User: User(id=null, username=test2025-11-26T15:35:55.512+01:00, firstname=firstname1, lastname=lastname1, email=some@email.com, password=password1, phone=+123456, userStatus=0) ---
+2025-11-26 15:35:56 [main] INFO  verify.VerifierResponse - PASSED: Create user: test2025-11-26T15:35:55.512+01:00
+2025-11-26 15:35:56 [main] INFO  api.UserApi - --- Login User : test2025-11-26T15:35:55.512+01:00 ---
+2025-11-26 15:35:56 [main] INFO  verify.VerifierResponse - === Verify Response: CommonResponseComparator{code=200, type=unknown, message=logged in user session:\d*} ===
+2025-11-26 15:35:56 [main] INFO  verify.VerifierResponse - Actual Result: {code=200, type=unknown, message=logged in user session:1764167756542}
+2025-11-26 15:35:56 [main] INFO  verify.VerifierResponse - PASSED: Status Code = 200 for response
+2025-11-26 15:35:56 [main] INFO  verify.VerifierResponse - PASSED: Code: expected=200, actual=200
+2025-11-26 15:35:56 [main] INFO  verify.VerifierResponse - PASSED: Type: expected=unknown, actual=unknown
+2025-11-26 15:35:56 [main] INFO  verify.VerifierResponse - PASSED: Message: expected=logged in user session:\d*, actual=logged in user session:1764167756542
+2025-11-26 15:35:56 [main] INFO  api.UserApi - --- Logout User ---
+2025-11-26 15:35:57 [main] INFO  verify.VerifierResponse - === Verify Response: CommonResponseComparator{code=200, type=unknown, message=ok} ===
+2025-11-26 15:35:57 [main] INFO  verify.VerifierResponse - Actual Result: {code=200, type=unknown, message=ok}
+2025-11-26 15:35:57 [main] INFO  verify.VerifierResponse - PASSED: Status Code = 200 for response
+2025-11-26 15:35:57 [main] INFO  verify.VerifierResponse - PASSED: Code: expected=200, actual=200
+2025-11-26 15:35:57 [main] INFO  verify.VerifierResponse - PASSED: Type: expected=unknown, actual=unknown
+2025-11-26 15:35:57 [main] INFO  verify.VerifierResponse - PASSED: Message: expected=ok, actual=ok
+2025-11-26 15:35:57 [main] INFO  listener.TestListener - ==== TEST PASSED: testLoginLogoutUser ====
+2025-11-26 15:35:57 [main] INFO  api.UserApi - --- Delete User by username: test2025-11-26T15:35:55.512+01:00 ---
+2025-11-26 15:35:57 [main] INFO  listener.TestListener - ==== STARTING TEST: testCreateVerifyDelete ====
+2025-11-26 15:35:57 [main] INFO  api.PetApi - --- Create Pet: Pet(id=null, category=Category(id=1, name=Dogs), name=Buddy, photoUrls=[https://example.com/photo1.jpg], tags=[Tag(id=1, name=Nice), Tag(id=2, name=Black)], status=AVAILABLE) ---
+2025-11-26 15:35:58 [main] INFO  api.PetApi - ID = 9223372036854775807
+2025-11-26 15:35:58 [main] INFO  verify.VerifierResponse - PASSED: Create pet
+2025-11-26 15:35:58 [main] INFO  api.StoreApi - --- Create Order: Order(id=null, petId=9223372036854775807, quantity=2, shipDate=2025-11-26T14:35:58.453+0000, status=new, complete=false) ---
+2025-11-26 15:35:59 [main] INFO  verify.VerifierResponse - PASSED: Create order
+2025-11-26 15:36:00 [main] INFO  api.StoreApi - --- Get Order by ID: 8620523439754849299 ---
+2025-11-26 15:36:00 [main] INFO  verify.VerifierResponse - === Verify Order: Order(id=8620523439754849299, petId=9223372036854775807, quantity=2, shipDate=2025-11-26T14:35:58.453+0000, status=new, complete=false) ===
+2025-11-26 15:36:00 [main] INFO  verify.VerifierResponse - Actual Result: {id=8620523439754849299, petId=9223372036854775807, quantity=2, shipDate=2025-11-26T14:35:58.453+0000, status=new, complete=false}
+2025-11-26 15:36:00 [main] INFO  verify.VerifierResponse - PASSED: Status Code = 200 for response
+2025-11-26 15:36:01 [main] INFO  verify.VerifierResponse - PASSED: petId: expected=9223372036854775807, actual=9223372036854775807
+2025-11-26 15:36:01 [main] INFO  verify.VerifierResponse - PASSED: quantity: expected=2, actual=2
+2025-11-26 15:36:01 [main] INFO  verify.VerifierResponse - PASSED: shipDate: expected=2025-11-26T14:35:58.453+0000, actual=2025-11-26T14:35:58.453+0000
+2025-11-26 15:36:01 [main] INFO  verify.VerifierResponse - PASSED: status: expected=new, actual=new
+2025-11-26 15:36:01 [main] INFO  verify.VerifierResponse - PASSED: complete: expected=false, actual=false
+2025-11-26 15:36:01 [awaitility-thread] INFO  api.StoreApi - --- Delete Order by ID: 8620523439754849299 ---
+2025-11-26 15:36:02 [awaitility-thread] INFO  verify.VerifierResponse - PASSED: Delete order
+2025-11-26 15:36:02 [awaitility-thread] INFO  api.StoreApi - --- Get Order by ID: 8620523439754849299 ---
+2025-11-26 15:36:03 [awaitility-thread] INFO  verify.VerifierResponse - PASSED: Get deleted order
+2025-11-26 15:36:03 [main] INFO  listener.TestListener - ==== TEST PASSED: testCreateVerifyDelete ====
+2025-11-26 15:36:03 [main] INFO  api.PetApi - --- Delete Pet by ID: 9223372036854775807 ---
+2025-11-26 15:46:05 [main] INFO  org.testng.internal.Utils - [XmlSuite] [WARN] 'parallel' value 'false' is no longer valid, defaulting to 'none'.
+2025-11-26 15:46:06 [main] INFO  org.testng.internal.Utils - [TestNG] Running:
+  D:\Documents\IdeaProjects\PetStoreApiAutomation\testng.xml
+
+2025-11-26 15:46:06 [main] INFO  listener.TestListener - ==== STARTING TEST: testCreateVerifyDeletePet ====
+2025-11-26 15:46:06 [main] INFO  api.PetApi - --- Create Pet: Pet(id=null, category=Category(id=1, name=Dogs), name=Buddy, photoUrls=[https://side.com/photo1.jpg, https://side.com/photo2.jpg], tags=[Tag(id=1, name=Nice)], status=SOLD) ---
+2025-11-26 15:46:11 [main] INFO  api.PetApi - ID = 9223372036854775807
+2025-11-26 15:46:11 [main] INFO  verify.VerifierResponse - PASSED: Create pet
+2025-11-26 15:46:12 [main] INFO  api.PetApi - --- Get Pet by ID: 9223372036854775807 ---
+2025-11-26 15:46:13 [main] INFO  verify.VerifierResponse - === Verify Pet: Pet(id=9223372036854775807, category=Category(id=1, name=Dogs), name=Buddy, photoUrls=[https://side.com/photo1.jpg, https://side.com/photo2.jpg], tags=[Tag(id=1, name=Nice)], status=SOLD) ===
+2025-11-26 15:46:13 [main] INFO  verify.VerifierResponse - Actual Result: {id=9223372036854775807, category={id=0, name=string}, name=doggie, photoUrls=[string], tags=[{id=0, name=string}], status=string}
+2025-11-26 15:46:13 [main] INFO  verify.VerifierResponse - PASSED: Status Code = 200 for response
+2025-11-26 15:46:13 [main] INFO  verify.VerifierResponse - PASSED: Tag count: expected=1, actual=1
+2025-11-26 15:46:13 [main] ERROR listener.TestListener - ==== TEST FAILED: testCreateVerifyDeletePet ====
+2025-11-26 15:46:13 [main] INFO  api.PetApi - --- Delete Pet by ID: 9223372036854775807 ---
+2025-11-26 15:46:14 [main] INFO  listener.TestListener - ==== STARTING TEST: testCreateVerifyDeletePet ====
+2025-11-26 15:46:14 [main] INFO  api.PetApi - --- Create Pet: Pet(id=null, category=Category(id=2, name=Cats), name=1, photoUrls=[https://side.com/photo1.jpg, https://side.com/photo2.jpg], tags=[Tag(id=1, name=Nice), Tag(id=2, name=Black)], status=AVAILABLE) ---
+2025-11-26 15:46:14 [main] INFO  api.PetApi - ID = 9223372036854775807
+2025-11-26 15:46:14 [main] INFO  verify.VerifierResponse - PASSED: Create pet
+2025-11-26 15:46:16 [main] INFO  api.PetApi - --- Get Pet by ID: 9223372036854775807 ---
+2025-11-26 15:46:16 [main] INFO  verify.VerifierResponse - === Verify Pet: Pet(id=9223372036854775807, category=Category(id=2, name=Cats), name=1, photoUrls=[https://side.com/photo1.jpg, https://side.com/photo2.jpg], tags=[Tag(id=1, name=Nice), Tag(id=2, name=Black)], status=AVAILABLE) ===
+2025-11-26 15:46:16 [main] INFO  verify.VerifierResponse - Actual Result: {id=9223372036854775807, category={id=2, name=Cats}, name=1, photoUrls=[https://side.com/photo1.jpg, https://side.com/photo2.jpg], tags=[{id=1, name=Nice}, {id=2, name=Black}], status=AVAILABLE}
+2025-11-26 15:46:16 [main] INFO  verify.VerifierResponse - PASSED: Status Code = 200 for response
+2025-11-26 15:46:16 [main] INFO  verify.VerifierResponse - PASSED: Category ID: expected=2, actual=2
+2025-11-26 15:46:16 [main] INFO  verify.VerifierResponse - PASSED: Category Name: expected=Cats, actual=Cats
+2025-11-26 15:46:17 [main] INFO  verify.VerifierResponse - PASSED: Pet Name: expected=1, actual=1
+2025-11-26 15:46:17 [main] INFO  verify.VerifierResponse - PASSED: Photo URLs: expected=[https://side.com/photo1.jpg, https://side.com/photo2.jpg], actual=[https://side.com/photo1.jpg, https://side.com/photo2.jpg]
+2025-11-26 15:46:17 [main] INFO  verify.VerifierResponse - PASSED: Pet Status: expected=AVAILABLE, actual=AVAILABLE
+2025-11-26 15:46:17 [main] INFO  verify.VerifierResponse - PASSED: Tag count: expected=2, actual=2
+2025-11-26 15:46:17 [main] INFO  verify.VerifierResponse - PASSED: Tag ID at index 0: expected=1, actual=1
+2025-11-26 15:46:17 [main] INFO  verify.VerifierResponse - PASSED: Tag Name at index 0: expected=Nice, actual=Nice
+2025-11-26 15:46:17 [main] INFO  verify.VerifierResponse - PASSED: Tag ID at index 1: expected=2, actual=2
+2025-11-26 15:46:17 [main] INFO  verify.VerifierResponse - PASSED: Tag Name at index 1: expected=Black, actual=Black
+2025-11-26 15:46:17 [awaitility-thread] INFO  api.PetApi - --- Delete Pet by ID: 9223372036854775807 ---
+2025-11-26 15:46:18 [awaitility-thread] INFO  verify.VerifierResponse - PASSED: Delete pet
+2025-11-26 15:46:18 [awaitility-thread] INFO  api.PetApi - --- Get Pet by ID: 9223372036854775807 ---
+2025-11-26 15:46:19 [awaitility-thread] INFO  verify.VerifierResponse - PASSED: Get deleted pet
+2025-11-26 15:46:19 [main] INFO  listener.TestListener - ==== TEST PASSED: testCreateVerifyDeletePet ====
+2025-11-26 15:46:19 [main] INFO  api.PetApi - --- Delete Pet by ID: 9223372036854775807 ---
+2025-11-26 15:46:19 [main] INFO  listener.TestListener - ==== STARTING TEST: testCreateVerifyDeletePet ====
+2025-11-26 15:46:19 [main] INFO  api.PetApi - --- Create Pet: Pet(id=null, category=Category(id=3, name=Rabbits), name=Mr. dj, photoUrls=[https://side.com/photo1.jpg, https://side.com/photo2.jpg], tags=[Tag(id=1, name=Nice), Tag(id=2, name=Black)], status=null) ---
+2025-11-26 15:46:20 [main] INFO  api.PetApi - ID = 9223372036854775807
+2025-11-26 15:46:20 [main] INFO  verify.VerifierResponse - PASSED: Create pet
+2025-11-26 15:46:21 [main] INFO  api.PetApi - --- Get Pet by ID: 9223372036854775807 ---
+2025-11-26 15:46:22 [main] INFO  verify.VerifierResponse - === Verify Pet: Pet(id=9223372036854775807, category=Category(id=3, name=Rabbits), name=Mr. dj, photoUrls=[https://side.com/photo1.jpg, https://side.com/photo2.jpg], tags=[Tag(id=1, name=Nice), Tag(id=2, name=Black)], status=null) ===
+2025-11-26 15:46:22 [main] INFO  verify.VerifierResponse - Actual Result: {id=9223372036854775807, category={id=3, name=Rabbits}, name=Mr. dj, photoUrls=[https://side.com/photo1.jpg, https://side.com/photo2.jpg], tags=[{id=1, name=Nice}, {id=2, name=Black}]}
+2025-11-26 15:46:22 [main] INFO  verify.VerifierResponse - PASSED: Status Code = 200 for response
+2025-11-26 15:46:22 [main] INFO  verify.VerifierResponse - PASSED: Category ID: expected=3, actual=3
+2025-11-26 15:46:22 [main] INFO  verify.VerifierResponse - PASSED: Category Name: expected=Rabbits, actual=Rabbits
+2025-11-26 15:46:22 [main] INFO  verify.VerifierResponse - PASSED: Pet Name: expected=Mr. dj, actual=Mr. dj
+2025-11-26 15:46:22 [main] INFO  verify.VerifierResponse - PASSED: Photo URLs: expected=[https://side.com/photo1.jpg, https://side.com/photo2.jpg], actual=[https://side.com/photo1.jpg, https://side.com/photo2.jpg]
+2025-11-26 15:46:22 [main] INFO  verify.VerifierResponse - PASSED: Tag count: expected=2, actual=2
+2025-11-26 15:46:22 [main] INFO  verify.VerifierResponse - PASSED: Tag ID at index 0: expected=1, actual=1
+2025-11-26 15:46:22 [main] INFO  verify.VerifierResponse - PASSED: Tag Name at index 0: expected=Nice, actual=Nice
+2025-11-26 15:46:22 [main] INFO  verify.VerifierResponse - PASSED: Tag ID at index 1: expected=2, actual=2
+2025-11-26 15:46:22 [main] INFO  verify.VerifierResponse - PASSED: Tag Name at index 1: expected=Black, actual=Black
+2025-11-26 15:46:23 [awaitility-thread] INFO  api.PetApi - --- Delete Pet by ID: 9223372036854775807 ---
+2025-11-26 15:46:23 [awaitility-thread] INFO  verify.VerifierResponse - PASSED: Delete pet
+2025-11-26 15:46:24 [awaitility-thread] INFO  api.PetApi - --- Get Pet by ID: 9223372036854775807 ---
+2025-11-26 15:46:24 [awaitility-thread] INFO  verify.VerifierResponse - PASSED: Get deleted pet
+2025-11-26 15:46:24 [main] INFO  listener.TestListener - ==== TEST PASSED: testCreateVerifyDeletePet ====
+2025-11-26 15:46:24 [main] INFO  api.PetApi - --- Delete Pet by ID: 9223372036854775807 ---
+2025-11-26 15:46:25 [main] INFO  listener.TestListener - ==== STARTING TEST: testCreateVerifyDeletePet ====
+2025-11-26 15:46:25 [main] INFO  api.PetApi - --- Create Pet: Pet(id=null, category=Category(id=4, name=Lions), name=null, photoUrls=[https://side.com/photo1.jpg], tags=[Tag(id=1, name=Nice), Tag(id=2, name=Black)], status=SOLD) ---
+2025-11-26 15:46:26 [main] INFO  api.PetApi - ID = 9223372036854775807
+2025-11-26 15:46:26 [main] INFO  verify.VerifierResponse - PASSED: Create pet
+2025-11-26 15:46:27 [main] INFO  api.PetApi - --- Get Pet by ID: 9223372036854775807 ---
+2025-11-26 15:46:28 [main] INFO  verify.VerifierResponse - === Verify Pet: Pet(id=9223372036854775807, category=Category(id=4, name=Lions), name=null, photoUrls=[https://side.com/photo1.jpg], tags=[Tag(id=1, name=Nice), Tag(id=2, name=Black)], status=SOLD) ===
+2025-11-26 15:46:28 [main] INFO  verify.VerifierResponse - Actual Result: {id=9223372036854775807, category={id=4, name=Lions}, photoUrls=[https://side.com/photo1.jpg], tags=[{id=1, name=Nice}, {id=2, name=Black}], status=SOLD}
+2025-11-26 15:46:28 [main] INFO  verify.VerifierResponse - PASSED: Status Code = 200 for response
+2025-11-26 15:46:28 [main] INFO  verify.VerifierResponse - PASSED: Category ID: expected=4, actual=4
+2025-11-26 15:46:28 [main] INFO  verify.VerifierResponse - PASSED: Category Name: expected=Lions, actual=Lions
+2025-11-26 15:46:28 [main] INFO  verify.VerifierResponse - PASSED: Pet Name: expected=null, actual=null
+2025-11-26 15:46:28 [main] INFO  verify.VerifierResponse - PASSED: Photo URLs: expected=[https://side.com/photo1.jpg], actual=[https://side.com/photo1.jpg]
+2025-11-26 15:46:28 [main] INFO  verify.VerifierResponse - PASSED: Pet Status: expected=SOLD, actual=SOLD
+2025-11-26 15:46:28 [main] INFO  verify.VerifierResponse - PASSED: Tag count: expected=2, actual=2
+2025-11-26 15:46:28 [main] INFO  verify.VerifierResponse - PASSED: Tag ID at index 0: expected=1, actual=1
+2025-11-26 15:46:28 [main] INFO  verify.VerifierResponse - PASSED: Tag Name at index 0: expected=Nice, actual=Nice
+2025-11-26 15:46:28 [main] INFO  verify.VerifierResponse - PASSED: Tag ID at index 1: expected=2, actual=2
+2025-11-26 15:46:28 [main] INFO  verify.VerifierResponse - PASSED: Tag Name at index 1: expected=Black, actual=Black
+2025-11-26 15:46:28 [awaitility-thread] INFO  api.PetApi - --- Delete Pet by ID: 9223372036854775807 ---
+2025-11-26 15:46:29 [awaitility-thread] INFO  verify.VerifierResponse - PASSED: Delete pet
+2025-11-26 15:46:29 [awaitility-thread] INFO  api.PetApi - --- Get Pet by ID: 9223372036854775807 ---
+2025-11-26 15:46:30 [awaitility-thread] INFO  verify.VerifierResponse - PASSED: Get deleted pet
+2025-11-26 15:46:30 [main] INFO  listener.TestListener - ==== TEST PASSED: testCreateVerifyDeletePet ====
+2025-11-26 15:46:30 [main] INFO  api.PetApi - --- Delete Pet by ID: 9223372036854775807 ---
+2025-11-26 15:46:30 [main] INFO  listener.TestListener - ==== STARTING TEST: testCreateVerifyDeletePet ====
+2025-11-26 15:46:30 [main] INFO  api.PetApi - --- Create Pet: Pet(id=null, category=Category(id=4, name=Lions), name=Buddy, photoUrls=[https://side.com/photo1.jpg], tags=null, status=AVAILABLE) ---
+2025-11-26 15:46:31 [main] INFO  api.PetApi - ID = 9223372036854775807
+2025-11-26 15:46:31 [main] INFO  verify.VerifierResponse - PASSED: Create pet
+2025-11-26 15:46:32 [main] INFO  api.PetApi - --- Get Pet by ID: 9223372036854775807 ---
+2025-11-26 15:46:33 [main] INFO  verify.VerifierResponse - === Verify Pet: Pet(id=9223372036854775807, category=Category(id=4, name=Lions), name=Buddy, photoUrls=[https://side.com/photo1.jpg], tags=null, status=AVAILABLE) ===
+2025-11-26 15:46:33 [main] INFO  verify.VerifierResponse - Actual Result: {id=9223372036854775807, category={id=0, name=string}, name=doggie, photoUrls=[string], tags=[{id=0, name=string}], status=string}
+2025-11-26 15:46:33 [main] INFO  verify.VerifierResponse - PASSED: Status Code = 200 for response
+2025-11-26 15:46:33 [main] ERROR listener.TestListener - ==== TEST FAILED: testCreateVerifyDeletePet ====
+2025-11-26 15:46:33 [main] INFO  api.PetApi - --- Delete Pet by ID: 9223372036854775807 ---
+2025-11-26 15:46:34 [main] INFO  listener.TestListener - ==== STARTING TEST: testCreateVerifyDeletePet ====
+2025-11-26 15:46:34 [main] INFO  api.PetApi - --- Create Pet: Pet(id=null, category=Category(id=4, name=Lions), name=Buddy, photoUrls=[], tags=[Tag(id=1, name=Nice), Tag(id=2, name=Black)], status=PENDING) ---
+2025-11-26 15:46:34 [main] INFO  api.PetApi - ID = 9223372036854775807
+2025-11-26 15:46:34 [main] INFO  verify.VerifierResponse - PASSED: Create pet
+2025-11-26 15:46:35 [main] INFO  api.PetApi - --- Get Pet by ID: 9223372036854775807 ---
+2025-11-26 15:46:36 [main] INFO  verify.VerifierResponse - === Verify Pet: Pet(id=9223372036854775807, category=Category(id=4, name=Lions), name=Buddy, photoUrls=[], tags=[Tag(id=1, name=Nice), Tag(id=2, name=Black)], status=PENDING) ===
+2025-11-26 15:46:36 [main] INFO  verify.VerifierResponse - Actual Result: {id=9223372036854775807, category={id=4, name=Lions}, name=Buddy, photoUrls=[], tags=[{id=1, name=Nice}, {id=2, name=Black}], status=PENDING}
+2025-11-26 15:46:36 [main] INFO  verify.VerifierResponse - PASSED: Status Code = 200 for response
+2025-11-26 15:46:36 [main] INFO  verify.VerifierResponse - PASSED: Category ID: expected=4, actual=4
+2025-11-26 15:46:36 [main] INFO  verify.VerifierResponse - PASSED: Category Name: expected=Lions, actual=Lions
+2025-11-26 15:46:36 [main] INFO  verify.VerifierResponse - PASSED: Pet Name: expected=Buddy, actual=Buddy
+2025-11-26 15:46:36 [main] INFO  verify.VerifierResponse - PASSED: Photo URLs: expected=[], actual=[]
+2025-11-26 15:46:36 [main] INFO  verify.VerifierResponse - PASSED: Pet Status: expected=PENDING, actual=PENDING
+2025-11-26 15:46:36 [main] INFO  verify.VerifierResponse - PASSED: Tag count: expected=2, actual=2
+2025-11-26 15:46:36 [main] INFO  verify.VerifierResponse - PASSED: Tag ID at index 0: expected=1, actual=1
+2025-11-26 15:46:36 [main] INFO  verify.VerifierResponse - PASSED: Tag Name at index 0: expected=Nice, actual=Nice
+2025-11-26 15:46:36 [main] INFO  verify.VerifierResponse - PASSED: Tag ID at index 1: expected=2, actual=2
+2025-11-26 15:46:36 [main] INFO  verify.VerifierResponse - PASSED: Tag Name at index 1: expected=Black, actual=Black
+2025-11-26 15:46:37 [awaitility-thread] INFO  api.PetApi - --- Delete Pet by ID: 9223372036854775807 ---
+2025-11-26 15:46:37 [awaitility-thread] INFO  verify.VerifierResponse - PASSED: Delete pet
+2025-11-26 15:46:38 [awaitility-thread] INFO  api.PetApi - --- Get Pet by ID: 9223372036854775807 ---
+2025-11-26 15:46:38 [awaitility-thread] INFO  verify.VerifierResponse - PASSED: Get deleted pet
+2025-11-26 15:46:38 [main] INFO  listener.TestListener - ==== TEST PASSED: testCreateVerifyDeletePet ====
+2025-11-26 15:46:38 [main] INFO  api.PetApi - --- Delete Pet by ID: 9223372036854775807 ---
+2025-11-26 15:46:39 [main] INFO  listener.TestListener - ==== STARTING TEST: testCreateVerifyDeletePet ====
+2025-11-26 15:46:39 [main] INFO  api.PetApi - --- Create Pet: Pet(id=null, category=null, name=1, photoUrls=[], tags=[Tag(id=1, name=Nice)], status=null) ---
+2025-11-26 15:46:39 [main] INFO  api.PetApi - ID = 9223372036854775807
+2025-11-26 15:46:39 [main] INFO  verify.VerifierResponse - PASSED: Create pet
+2025-11-26 15:46:41 [main] INFO  api.PetApi - --- Get Pet by ID: 9223372036854775807 ---
+2025-11-26 15:46:41 [main] INFO  verify.VerifierResponse - === Verify Pet: Pet(id=9223372036854775807, category=null, name=1, photoUrls=[], tags=[Tag(id=1, name=Nice)], status=null) ===
+2025-11-26 15:46:41 [main] INFO  verify.VerifierResponse - Actual Result: {id=9223372036854775807, name=1, photoUrls=[], tags=[{id=1, name=Nice}]}
+2025-11-26 15:46:41 [main] INFO  verify.VerifierResponse - PASSED: Status Code = 200 for response
+2025-11-26 15:46:41 [main] INFO  verify.VerifierResponse - PASSED: Category ID: expected=0, actual=0
+2025-11-26 15:46:41 [main] INFO  verify.VerifierResponse - PASSED: Pet Name: expected=1, actual=1
+2025-11-26 15:46:41 [main] INFO  verify.VerifierResponse - PASSED: Photo URLs: expected=[], actual=[]
+2025-11-26 15:46:41 [main] INFO  verify.VerifierResponse - PASSED: Tag count: expected=1, actual=1
+2025-11-26 15:46:41 [main] INFO  verify.VerifierResponse - PASSED: Tag ID at index 0: expected=1, actual=1
+2025-11-26 15:46:41 [main] INFO  verify.VerifierResponse - PASSED: Tag Name at index 0: expected=Nice, actual=Nice
+2025-11-26 15:46:42 [awaitility-thread] INFO  api.PetApi - --- Delete Pet by ID: 9223372036854775807 ---
+2025-11-26 15:46:42 [awaitility-thread] INFO  verify.VerifierResponse - PASSED: Delete pet
+2025-11-26 15:46:43 [awaitility-thread] INFO  api.PetApi - --- Get Pet by ID: 9223372036854775807 ---
+2025-11-26 15:46:43 [main] INFO  listener.TestListener - ==== TEST PASSED: testCreateVerifyDeletePet ====
+2025-11-26 15:46:43 [main] INFO  api.PetApi - --- Delete Pet by ID: 9223372036854775807 ---
+2025-11-26 15:46:44 [main] INFO  listener.TestListener - ==== STARTING TEST: testCreateVerifyDeletePet ====
+2025-11-26 15:46:44 [main] INFO  api.PetApi - --- Create Pet: Pet(id=null, category=Category(id=4, name=Lions), name=e, photoUrls=[https://side.com/photo1.jpg, https://side.com/photo2.jpg], tags=null, status=null) ---
+2025-11-26 15:46:44 [main] INFO  api.PetApi - ID = 9223372036854775807
+2025-11-26 15:46:44 [main] INFO  verify.VerifierResponse - PASSED: Create pet
+2025-11-26 15:46:46 [main] INFO  api.PetApi - --- Get Pet by ID: 9223372036854775807 ---
+2025-11-26 15:46:46 [main] INFO  verify.VerifierResponse - === Verify Pet: Pet(id=9223372036854775807, category=Category(id=4, name=Lions), name=e, photoUrls=[https://side.com/photo1.jpg, https://side.com/photo2.jpg], tags=null, status=null) ===
+2025-11-26 15:46:46 [main] INFO  verify.VerifierResponse - Actual Result: {id=9223372036854775807, category={id=4, name=Lions}, name=e, photoUrls=[https://side.com/photo1.jpg, https://side.com/photo2.jpg], tags=[]}
+2025-11-26 15:46:46 [main] INFO  verify.VerifierResponse - PASSED: Status Code = 200 for response
+2025-11-26 15:46:46 [main] INFO  verify.VerifierResponse - PASSED: Category ID: expected=4, actual=4
+2025-11-26 15:46:46 [main] INFO  verify.VerifierResponse - PASSED: Category Name: expected=Lions, actual=Lions
+2025-11-26 15:46:46 [main] INFO  verify.VerifierResponse - PASSED: Pet Name: expected=e, actual=e
+2025-11-26 15:46:46 [main] INFO  verify.VerifierResponse - PASSED: Photo URLs: expected=[https://side.com/photo1.jpg, https://side.com/photo2.jpg], actual=[https://side.com/photo1.jpg, https://side.com/photo2.jpg]
+2025-11-26 15:46:47 [awaitility-thread] INFO  api.PetApi - --- Delete Pet by ID: 9223372036854775807 ---
+2025-11-26 15:46:47 [awaitility-thread] INFO  verify.VerifierResponse - PASSED: Delete pet
+2025-11-26 15:46:48 [awaitility-thread] INFO  api.PetApi - --- Get Pet by ID: 9223372036854775807 ---
+2025-11-26 15:46:48 [awaitility-thread] INFO  verify.VerifierResponse - PASSED: Get deleted pet
+2025-11-26 15:46:48 [main] INFO  listener.TestListener - ==== TEST PASSED: testCreateVerifyDeletePet ====
+2025-11-26 15:46:48 [main] INFO  api.PetApi - --- Delete Pet by ID: 9223372036854775807 ---
+2025-11-26 15:46:49 [main] INFO  listener.TestListener - ==== STARTING TEST: testUpdatePet ====
+2025-11-26 15:46:49 [main] INFO  api.PetApi - --- Create Pet: Pet(id=null, category=Category(id=1, name=Dogs), name=Buddy, photoUrls=[https://example.com/photo1.jpg], tags=[Tag(id=1, name=Nice), Tag(id=2, name=Black)], status=AVAILABLE) ---
+2025-11-26 15:46:50 [main] INFO  api.PetApi - ID = 9223372036854775807
+2025-11-26 15:46:50 [main] INFO  verify.VerifierResponse - PASSED: Create pet
+2025-11-26 15:46:51 [main] INFO  api.PetApi - --- Get Pet by ID: 9223372036854775807 ---
+2025-11-26 15:46:51 [main] INFO  verify.VerifierResponse - === Verify Pet: Pet(id=9223372036854775807, category=Category(id=1, name=Dogs), name=Buddy, photoUrls=[https://example.com/photo1.jpg], tags=[Tag(id=1, name=Nice), Tag(id=2, name=Black)], status=AVAILABLE) ===
+2025-11-26 15:46:51 [main] INFO  verify.VerifierResponse - Actual Result: {id=9223372036854775807, category={id=1, name=Dogs}, name=Buddy, photoUrls=[https://example.com/photo1.jpg], tags=[{id=1, name=Nice}, {id=2, name=Black}], status=AVAILABLE}
+2025-11-26 15:46:51 [main] INFO  verify.VerifierResponse - PASSED: Status Code = 200 for response
+2025-11-26 15:46:51 [main] INFO  verify.VerifierResponse - PASSED: Category ID: expected=1, actual=1
+2025-11-26 15:46:51 [main] INFO  verify.VerifierResponse - PASSED: Category Name: expected=Dogs, actual=Dogs
+2025-11-26 15:46:51 [main] INFO  verify.VerifierResponse - PASSED: Pet Name: expected=Buddy, actual=Buddy
+2025-11-26 15:46:51 [main] INFO  verify.VerifierResponse - PASSED: Photo URLs: expected=[https://example.com/photo1.jpg], actual=[https://example.com/photo1.jpg]
+2025-11-26 15:46:51 [main] INFO  verify.VerifierResponse - PASSED: Pet Status: expected=AVAILABLE, actual=AVAILABLE
+2025-11-26 15:46:51 [main] INFO  verify.VerifierResponse - PASSED: Tag count: expected=2, actual=2
+2025-11-26 15:46:51 [main] INFO  verify.VerifierResponse - PASSED: Tag ID at index 0: expected=1, actual=1
+2025-11-26 15:46:51 [main] INFO  verify.VerifierResponse - PASSED: Tag Name at index 0: expected=Nice, actual=Nice
+2025-11-26 15:46:51 [main] INFO  verify.VerifierResponse - PASSED: Tag ID at index 1: expected=2, actual=2
+2025-11-26 15:46:51 [main] INFO  verify.VerifierResponse - PASSED: Tag Name at index 1: expected=Black, actual=Black
+2025-11-26 15:46:51 [main] INFO  api.PetApi - --- Update Pet by ID: 9223372036854775807, Pet: Pet(id=9223372036854775807, category=Category(id=4, name=Lions), name=new name, photoUrls=[https://example.com/photo1.jpg, https://example.com/photo2.jpg], tags=[Tag(id=1, name=Nice), Tag(id=2, name=Black), Tag(id=3, name=Small)], status=PENDING) ---
+2025-11-26 15:46:52 [main] INFO  verify.VerifierResponse - PASSED: Update pet
+2025-11-26 15:46:52 [main] INFO  api.PetApi - --- Get Pet by ID: 9223372036854775807 ---
+2025-11-26 15:46:53 [main] INFO  verify.VerifierResponse - === Verify Pet: Pet(id=9223372036854775807, category=Category(id=4, name=Lions), name=new name, photoUrls=[https://example.com/photo1.jpg, https://example.com/photo2.jpg], tags=[Tag(id=1, name=Nice), Tag(id=2, name=Black), Tag(id=3, name=Small)], status=PENDING) ===
+2025-11-26 15:46:53 [main] INFO  verify.VerifierResponse - Actual Result: {id=9223372036854775807, category={id=4, name=Lions}, name=new name, photoUrls=[https://example.com/photo1.jpg, https://example.com/photo2.jpg], tags=[{id=1, name=Nice}, {id=2, name=Black}, {id=3, name=Small}], status=PENDING}
+2025-11-26 15:46:53 [main] INFO  verify.VerifierResponse - PASSED: Status Code = 200 for response
+2025-11-26 15:46:53 [main] INFO  verify.VerifierResponse - PASSED: Category ID: expected=4, actual=4
+2025-11-26 15:46:53 [main] INFO  verify.VerifierResponse - PASSED: Category Name: expected=Lions, actual=Lions
+2025-11-26 15:46:53 [main] INFO  verify.VerifierResponse - PASSED: Pet Name: expected=new name, actual=new name
+2025-11-26 15:46:53 [main] INFO  verify.VerifierResponse - PASSED: Photo URLs: expected=[https://example.com/photo1.jpg, https://example.com/photo2.jpg], actual=[https://example.com/photo1.jpg, https://example.com/photo2.jpg]
+2025-11-26 15:46:53 [main] INFO  verify.VerifierResponse - PASSED: Pet Status: expected=PENDING, actual=PENDING
+2025-11-26 15:46:53 [main] INFO  verify.VerifierResponse - PASSED: Tag count: expected=3, actual=3
+2025-11-26 15:46:53 [main] INFO  verify.VerifierResponse - PASSED: Tag ID at index 0: expected=1, actual=1
+2025-11-26 15:46:53 [main] INFO  verify.VerifierResponse - PASSED: Tag Name at index 0: expected=Nice, actual=Nice
+2025-11-26 15:46:53 [main] INFO  verify.VerifierResponse - PASSED: Tag ID at index 1: expected=2, actual=2
+2025-11-26 15:46:53 [main] INFO  verify.VerifierResponse - PASSED: Tag Name at index 1: expected=Black, actual=Black
+2025-11-26 15:46:53 [main] INFO  verify.VerifierResponse - PASSED: Tag ID at index 2: expected=3, actual=3
+2025-11-26 15:46:53 [main] INFO  verify.VerifierResponse - PASSED: Tag Name at index 2: expected=Small, actual=Small
+2025-11-26 15:46:53 [main] INFO  listener.TestListener - ==== TEST PASSED: testUpdatePet ====
+2025-11-26 15:46:53 [main] INFO  api.PetApi - --- Delete Pet by ID: 9223372036854775807 ---
+2025-11-26 15:46:53 [main] INFO  listener.TestListener - ==== STARTING TEST: testGetByStatus ====
+2025-11-26 15:46:53 [main] INFO  api.PetApi - --- Create Pet: Pet(id=null, category=Category(id=1, name=Dogs), name=Buddy, photoUrls=[https://example.com/photo1.jpg], tags=[Tag(id=1, name=Nice), Tag(id=2, name=Black)], status=AVAILABLE) ---
+2025-11-26 15:46:54 [main] INFO  api.PetApi - ID = 9223372036854775807
+2025-11-26 15:46:54 [main] INFO  verify.VerifierResponse - PASSED: Create pet
+2025-11-26 15:46:54 [main] INFO  api.PetApi - --- Get Pet by status: AVAILABLE ---
+2025-11-26 15:46:54 [main] INFO  verify.VerifierResponse - PASSED: Get pets by status AVAILABLE
+2025-11-26 15:46:55 [main] INFO  listener.TestListener - ==== TEST PASSED: testGetByStatus ====
+2025-11-26 15:46:55 [main] INFO  api.PetApi - --- Delete Pet by ID: 9223372036854775807 ---
+2025-11-26 15:46:55 [main] INFO  listener.TestListener - ==== STARTING TEST: testUploadPetImage ====
+2025-11-26 15:46:55 [main] INFO  api.PetApi - --- Create Pet: Pet(id=null, category=Category(id=2, name=Cats), name=Mur, photoUrls=[https://example.com/photo1.jpg], tags=[Tag(id=1, name=Nice), Tag(id=2, name=Black)], status=AVAILABLE) ---
+2025-11-26 15:46:56 [main] INFO  api.PetApi - ID = 9223372036854775807
+2025-11-26 15:46:56 [main] INFO  verify.VerifierResponse - PASSED: Create pet
+2025-11-26 15:46:56 [main] INFO  verify.VerifierResponse - PASSED: Upload pet image
+2025-11-26 15:46:56 [main] INFO  listener.TestListener - ==== TEST PASSED: testUploadPetImage ====
+2025-11-26 15:46:56 [main] INFO  api.PetApi - --- Delete Pet by ID: 9223372036854775807 ---
+2025-11-26 15:46:57 [main] INFO  listener.TestListener - ==== STARTING TEST: testUpdatePetInStore ====
+2025-11-26 15:46:57 [main] INFO  api.PetApi - --- Create Pet: Pet(id=null, category=Category(id=1, name=Dogs), name=Buddy, photoUrls=[https://example.com/photo1.jpg], tags=[Tag(id=1, name=Nice), Tag(id=2, name=Black)], status=AVAILABLE) ---
+2025-11-26 15:46:57 [main] INFO  api.PetApi - ID = 9223372036854775807
+2025-11-26 15:46:57 [main] INFO  verify.VerifierResponse - PASSED: Create pet
+2025-11-26 15:46:59 [main] INFO  api.PetApi - --- Get Pet by ID: 9223372036854775807 ---
+2025-11-26 15:46:59 [main] INFO  verify.VerifierResponse - === Verify Pet: Pet(id=9223372036854775807, category=Category(id=1, name=Dogs), name=Buddy, photoUrls=[https://example.com/photo1.jpg], tags=[Tag(id=1, name=Nice), Tag(id=2, name=Black)], status=AVAILABLE) ===
+2025-11-26 15:46:59 [main] INFO  verify.VerifierResponse - Actual Result: {id=9223372036854775807, category={id=1, name=Dogs}, name=Buddy, photoUrls=[https://example.com/photo1.jpg], tags=[{id=1, name=Nice}, {id=2, name=Black}], status=AVAILABLE}
+2025-11-26 15:46:59 [main] INFO  verify.VerifierResponse - PASSED: Status Code = 200 for response
+2025-11-26 15:47:00 [main] INFO  verify.VerifierResponse - PASSED: Category ID: expected=1, actual=1
+2025-11-26 15:47:00 [main] INFO  verify.VerifierResponse - PASSED: Category Name: expected=Dogs, actual=Dogs
+2025-11-26 15:47:00 [main] INFO  verify.VerifierResponse - PASSED: Pet Name: expected=Buddy, actual=Buddy
+2025-11-26 15:47:00 [main] INFO  verify.VerifierResponse - PASSED: Photo URLs: expected=[https://example.com/photo1.jpg], actual=[https://example.com/photo1.jpg]
+2025-11-26 15:47:00 [main] INFO  verify.VerifierResponse - PASSED: Pet Status: expected=AVAILABLE, actual=AVAILABLE
+2025-11-26 15:47:00 [main] INFO  verify.VerifierResponse - PASSED: Tag count: expected=2, actual=2
+2025-11-26 15:47:00 [main] INFO  verify.VerifierResponse - PASSED: Tag ID at index 0: expected=1, actual=1
+2025-11-26 15:47:00 [main] INFO  verify.VerifierResponse - PASSED: Tag Name at index 0: expected=Nice, actual=Nice
+2025-11-26 15:47:00 [main] INFO  verify.VerifierResponse - PASSED: Tag ID at index 1: expected=2, actual=2
+2025-11-26 15:47:00 [main] INFO  verify.VerifierResponse - PASSED: Tag Name at index 1: expected=Black, actual=Black
+2025-11-26 15:47:00 [main] INFO  api.PetApi - --- Update Pet in Store by ID: 9223372036854775807, Pet: Pet(id=9223372036854775807, category=Category(id=1, name=Dogs), name=new name, photoUrls=[https://example.com/photo1.jpg], tags=[Tag(id=1, name=Nice), Tag(id=2, name=Black)], status=SOLD) ---
+2025-11-26 15:47:00 [main] INFO  verify.VerifierResponse - PASSED: Update pet
+2025-11-26 15:47:01 [main] INFO  api.PetApi - --- Get Pet by ID: 9223372036854775807 ---
+2025-11-26 15:47:02 [main] INFO  verify.VerifierResponse - === Verify Pet: Pet(id=9223372036854775807, category=Category(id=1, name=Dogs), name=new name, photoUrls=[https://example.com/photo1.jpg], tags=[Tag(id=1, name=Nice), Tag(id=2, name=Black)], status=SOLD) ===
+2025-11-26 15:47:02 [main] INFO  verify.VerifierResponse - Actual Result: {id=9223372036854775807, category={id=0, name=string}, name=doggie, photoUrls=[string], tags=[{id=0, name=string}], status=string}
+2025-11-26 15:47:02 [main] INFO  verify.VerifierResponse - PASSED: Status Code = 200 for response
+2025-11-26 15:47:02 [main] ERROR listener.TestListener - ==== TEST FAILED: testUpdatePetInStore ====
+2025-11-26 15:47:02 [main] INFO  api.PetApi - --- Delete Pet by ID: 9223372036854775807 ---
+2025-11-26 15:47:03 [main] INFO  listener.TestListener - ==== STARTING TEST: testCreateVerifyDeleteUser ====
+2025-11-26 15:47:03 [main] INFO  api.UserApi - --- Create User: User(id=null, username=test2025-11-26T15:47:03.063+01:00, firstname=firstname1, lastname=lastname1, email=some@email.com, password=password1, phone=+123456, userStatus=0) ---
+2025-11-26 15:47:03 [main] INFO  verify.VerifierResponse - PASSED: Create user
+2025-11-26 15:47:05 [main] INFO  api.UserApi - --- Get User by username: test2025-11-26T15:47:03.063+01:00 ---
+2025-11-26 15:47:05 [main] INFO  verify.VerifierResponse - === Verify User: User(id=9222968140497193150, username=test2025-11-26T15:47:03.063+01:00, firstname=firstname1, lastname=lastname1, email=some@email.com, password=password1, phone=+123456, userStatus=0) ===
+2025-11-26 15:47:05 [main] INFO  verify.VerifierResponse - Actual Result: {id=9222968140497193150, username=test2025-11-26T15:47:03.063+01:00, email=some@email.com, password=password1, phone=+123456, userStatus=0}
+2025-11-26 15:47:05 [main] INFO  verify.VerifierResponse - PASSED: Status Code = 200 for response
+2025-11-26 15:47:05 [main] INFO  verify.VerifierResponse - PASSED: Username: expected=test2025-11-26T15:47:03.063+01:00, actual=test2025-11-26T15:47:03.063+01:00
+2025-11-26 15:47:05 [main] INFO  verify.VerifierResponse - PASSED: Email: expected=some@email.com, actual=some@email.com
+2025-11-26 15:47:05 [main] INFO  verify.VerifierResponse - PASSED: Password: expected=password1, actual=password1
+2025-11-26 15:47:05 [main] INFO  verify.VerifierResponse - PASSED: Phone: expected=+123456, actual=+123456
+2025-11-26 15:47:05 [main] INFO  verify.VerifierResponse - PASSED: User Status: expected=0, actual=0
+2025-11-26 15:47:05 [main] ERROR listener.TestListener - ==== TEST FAILED: testCreateVerifyDeleteUser ====
+2025-11-26 15:47:05 [main] INFO  api.UserApi - --- Delete User by username: test2025-11-26T15:47:03.063+01:00 ---
+2025-11-26 15:47:06 [main] INFO  listener.TestListener - ==== STARTING TEST: testCreateWithListUser ====
+2025-11-26 15:47:06 [main] INFO  api.UserApi - --- Create Users: [User(id=null, username=test-1, firstname=firstname-1, lastname=lastname-1, email=some-1@email.com, password=password-1, phone=+123456, userStatus=0), User(id=null, username=test-2, firstname=firstname-2, lastname=lastname-2, email=some-2@email.com, password=password-2, phone=+456789, userStatus=1)] ---
+2025-11-26 15:47:07 [main] INFO  verify.VerifierResponse - PASSED: Create users: [User(id=null, username=test-1, firstname=firstname-1, lastname=lastname-1, email=some-1@email.com, password=password-1, phone=+123456, userStatus=0), User(id=null, username=test-2, firstname=firstname-2, lastname=lastname-2, email=some-2@email.com, password=password-2, phone=+456789, userStatus=1)]
+2025-11-26 15:47:08 [main] INFO  api.UserApi - --- Get User by username: test-1 ---
+2025-11-26 15:47:08 [main] INFO  verify.VerifierResponse - === Verify User: User(id=9222968140497193150, username=test-1, firstname=firstname-1, lastname=lastname-1, email=some-1@email.com, password=password-1, phone=+123456, userStatus=0) ===
+2025-11-26 15:47:08 [main] INFO  verify.VerifierResponse - Actual Result: {id=9222968140497193150, username=test-1, email=some-1@email.com, password=password-1, phone=+123456, userStatus=0}
+2025-11-26 15:47:08 [main] INFO  verify.VerifierResponse - PASSED: Status Code = 200 for response
+2025-11-26 15:47:08 [main] INFO  verify.VerifierResponse - PASSED: Username: expected=test-1, actual=test-1
+2025-11-26 15:47:08 [main] INFO  verify.VerifierResponse - PASSED: Email: expected=some-1@email.com, actual=some-1@email.com
+2025-11-26 15:47:08 [main] INFO  verify.VerifierResponse - PASSED: Password: expected=password-1, actual=password-1
+2025-11-26 15:47:08 [main] INFO  verify.VerifierResponse - PASSED: Phone: expected=+123456, actual=+123456
+2025-11-26 15:47:08 [main] INFO  verify.VerifierResponse - PASSED: User Status: expected=0, actual=0
+2025-11-26 15:47:08 [main] ERROR listener.TestListener - ==== TEST FAILED: testCreateWithListUser ====
+2025-11-26 15:47:08 [main] INFO  api.UserApi - --- Delete User by username: test-1 ---
+2025-11-26 15:47:09 [main] INFO  api.UserApi - --- Delete User by username: test-2 ---
+2025-11-26 15:47:10 [main] INFO  listener.TestListener - ==== STARTING TEST: testLoginLogoutUser ====
+2025-11-26 15:47:10 [main] INFO  api.UserApi - --- Create User: User(id=null, username=test2025-11-26T15:47:10.062+01:00, firstname=firstname1, lastname=lastname1, email=some@email.com, password=password1, phone=+123456, userStatus=0) ---
+2025-11-26 15:47:10 [main] INFO  verify.VerifierResponse - PASSED: Create user: test2025-11-26T15:47:10.062+01:00
+2025-11-26 15:47:10 [main] INFO  api.UserApi - --- Login User : test2025-11-26T15:47:10.062+01:00 ---
+2025-11-26 15:47:11 [main] INFO  verify.VerifierResponse - === Verify Response: CommonResponseComparator{code=200, type=unknown, message=logged in user session:\d*} ===
+2025-11-26 15:47:11 [main] INFO  verify.VerifierResponse - Actual Result: {code=200, type=unknown, message=logged in user session:1764168431108}
+2025-11-26 15:47:11 [main] INFO  verify.VerifierResponse - PASSED: Status Code = 200 for response
+2025-11-26 15:47:11 [main] INFO  verify.VerifierResponse - PASSED: Code: expected=200, actual=200
+2025-11-26 15:47:11 [main] INFO  verify.VerifierResponse - PASSED: Type: expected=unknown, actual=unknown
+2025-11-26 15:47:11 [main] INFO  verify.VerifierResponse - PASSED: Message: expected=logged in user session:\d*, actual=logged in user session:1764168431108
+2025-11-26 15:47:11 [main] INFO  api.UserApi - --- Logout User ---
+2025-11-26 15:47:11 [main] INFO  verify.VerifierResponse - === Verify Response: CommonResponseComparator{code=200, type=unknown, message=ok} ===
+2025-11-26 15:47:11 [main] INFO  verify.VerifierResponse - Actual Result: {code=200, type=unknown, message=ok}
+2025-11-26 15:47:11 [main] INFO  verify.VerifierResponse - PASSED: Status Code = 200 for response
+2025-11-26 15:47:11 [main] INFO  verify.VerifierResponse - PASSED: Code: expected=200, actual=200
+2025-11-26 15:47:11 [main] INFO  verify.VerifierResponse - PASSED: Type: expected=unknown, actual=unknown
+2025-11-26 15:47:11 [main] INFO  verify.VerifierResponse - PASSED: Message: expected=ok, actual=ok
+2025-11-26 15:47:11 [main] INFO  listener.TestListener - ==== TEST PASSED: testLoginLogoutUser ====
+2025-11-26 15:47:11 [main] INFO  api.UserApi - --- Delete User by username: test2025-11-26T15:47:10.062+01:00 ---
+2025-11-26 15:47:12 [main] INFO  listener.TestListener - ==== STARTING TEST: testCreateVerifyDelete ====
+2025-11-26 15:47:12 [main] INFO  api.PetApi - --- Create Pet: Pet(id=null, category=Category(id=1, name=Dogs), name=Buddy, photoUrls=[https://example.com/photo1.jpg], tags=[Tag(id=1, name=Nice), Tag(id=2, name=Black)], status=AVAILABLE) ---
+2025-11-26 15:47:12 [main] INFO  api.PetApi - ID = 9223372036854775807
+2025-11-26 15:47:12 [main] INFO  verify.VerifierResponse - PASSED: Create pet
+2025-11-26 15:47:12 [main] INFO  api.StoreApi - --- Create Order: Order(id=null, petId=9223372036854775807, quantity=2, shipDate=2025-11-26T14:47:12.927+0000, status=new, complete=false) ---
+2025-11-26 15:47:13 [main] INFO  verify.VerifierResponse - PASSED: Create order
+2025-11-26 15:47:14 [main] INFO  api.StoreApi - --- Get Order by ID: 8620523439754849305 ---
+2025-11-26 15:47:15 [main] INFO  verify.VerifierResponse - === Verify Order: Order(id=8620523439754849305, petId=9223372036854775807, quantity=2, shipDate=2025-11-26T14:47:12.927+0000, status=new, complete=false) ===
+2025-11-26 15:47:15 [main] INFO  verify.VerifierResponse - Actual Result: {id=8620523439754849305, petId=9223372036854775807, quantity=2, shipDate=2025-11-26T14:47:12.927+0000, status=new, complete=false}
+2025-11-26 15:47:15 [main] INFO  verify.VerifierResponse - PASSED: Status Code = 200 for response
+2025-11-26 15:47:15 [main] INFO  verify.VerifierResponse - PASSED: petId: expected=9223372036854775807, actual=9223372036854775807
+2025-11-26 15:47:15 [main] INFO  verify.VerifierResponse - PASSED: quantity: expected=2, actual=2
+2025-11-26 15:47:15 [main] INFO  verify.VerifierResponse - PASSED: shipDate: expected=2025-11-26T14:47:12.927+0000, actual=2025-11-26T14:47:12.927+0000
+2025-11-26 15:47:15 [main] INFO  verify.VerifierResponse - PASSED: status: expected=new, actual=new
+2025-11-26 15:47:15 [main] INFO  verify.VerifierResponse - PASSED: complete: expected=false, actual=false
+2025-11-26 15:47:16 [awaitility-thread] INFO  api.StoreApi - --- Delete Order by ID: 8620523439754849305 ---
+2025-11-26 15:47:16 [awaitility-thread] INFO  verify.VerifierResponse - PASSED: Delete order
+2025-11-26 15:47:17 [awaitility-thread] INFO  api.StoreApi - --- Get Order by ID: 8620523439754849305 ---
+2025-11-26 15:47:17 [awaitility-thread] INFO  verify.VerifierResponse - PASSED: Get deleted order
+2025-11-26 15:47:17 [main] INFO  listener.TestListener - ==== TEST PASSED: testCreateVerifyDelete ====
+2025-11-26 15:47:17 [main] INFO  api.PetApi - --- Delete Pet by ID: 9223372036854775807 ---

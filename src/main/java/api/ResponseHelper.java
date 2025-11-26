@@ -17,6 +17,11 @@ public class ResponseHelper {
         return (long)id;
     }
 
+    /**
+     * Return response id
+     * @param response object
+     * @return null - response != 200, 0 - not found id, id value - if id exists
+     */
     public static Object getId(Response response) {
         if (getStatusCode(response) != 200) {
             return null;

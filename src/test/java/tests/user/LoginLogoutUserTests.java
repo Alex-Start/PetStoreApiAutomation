@@ -6,6 +6,7 @@ import com.fasterxml.jackson.core.JsonProcessingException;
 import io.restassured.response.Response;
 import model.CommonResponseComparator;
 import model.User;
+import org.joda.time.DateTime;
 import org.testng.annotations.Test;
 
 import static verify.NumberVerifier.asNumber;
@@ -17,14 +18,14 @@ public class LoginLogoutUserTests extends BaseTest {
 
     @Test
     public void testLoginLogoutUser() throws JsonProcessingException {
-        User user = new User.Builder()
-                .setUsername("test1")
-                .setFirstname("firstname1")
-                .setLastname("lastname1")
-                .setPassword("password1")
-                .setEmail("some@email.com")
-                .setPhone("+123456")
-                .setUserStatus(0)
+        User user = User.builder()
+                .username("test"+ DateTime.now())
+                .firstname("firstname1")
+                .lastname("lastname1")
+                .password("password1")
+                .email("some@email.com")
+                .phone("+123456")
+                .userStatus(0)
                 .build();
 
         Response createResponse = userApi.create(user);
